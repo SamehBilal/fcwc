@@ -1,0 +1,493 @@
+{
+  "name": "FIFA Club World Cup 2025",
+  "groups": [
+    {
+      "name": "Group A",
+      "standings": [
+        {
+          "team": {
+            "name": "Al Ahly",
+            "code": "EGY"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Palmeiras",
+            "code": "BRA"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Porto",
+            "code": "PRT"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Inter Miami",
+            "code": "USA"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group B",
+      "standings": [
+        {
+          "team": {
+            "name": "Paris Saint-Germain",
+            "code": "FRA"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Atlético Madrid",
+            "code": "ESP"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Botafogo",
+            "code": "BRA"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Seattle Sounders",
+            "code": "USA"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group C",
+      "standings": [
+        {
+          "team": {
+            "name": "Bayern Munich",
+            "code": "GER"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Benfica",
+            "code": "BRT"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Boca Juniors",
+            "code": "ARG"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Auckland City",
+            "code": "NZL"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group D",
+      "standings": [
+        {
+          "team": {
+            "name": "Flamengo",
+            "code": "BRA"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Chelsea",
+            "code": "GBR"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Esperance Sportive de Tunis",
+            "code": "TUN"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Los Angeles FC",
+            "code": "USA"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group E",
+      "standings": [
+        {
+          "team": {
+            "name": "River Plate",
+            "code": "ARG"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Inter Milan",
+            "code": "ITA"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "CF Monterrey",
+            "code": "MEX"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Urawa Red Diamonds",
+            "code": "JPN"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group F",
+      "standings": [
+        {
+          "team": {
+            "name": "Fluminense",
+            "code": "BRA"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Borussia Dortmund",
+            "code": "GER"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Ulsan Hyundai",
+            "code": "KOR"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Mamelodi Sundowns",
+            "code": "ZAF"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group G",
+      "standings": [
+        {
+          "team": {
+            "name": "Manchester City",
+            "code": "GBR"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Juventus",
+            "code": "ITA"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Wydad Casablanca",
+            "code": "MAR"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Al Ain",
+            "code": "ARE"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    },
+    {
+      "name": "Group H",
+      "standings": [
+        {
+          "team": {
+            "name": "Real Madrid",
+            "code": "ESP"
+          },
+          "pos": 1,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "FC Salzburg",
+            "code": "AUT"
+          },
+          "pos": 2,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "Al Hilal",
+            "code": "SAU"
+          },
+          "pos": 3,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        },
+        {
+          "team": {
+            "name": "CF Pachuca",
+            "code": "MEX"
+          },
+          "pos": 4,
+          "played": 0,
+          "won": 0,
+          "drawn": 0,
+          "lost": 0,
+          "goals_for": 0,
+          "goals_against": 0,
+          "pts": 0
+        }
+      ]
+    }
+  ]
+}

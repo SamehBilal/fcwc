@@ -1,0 +1,89 @@
+{
+  "name": "FIFA Club World Cup 2025",
+  "stadiums": [
+    {
+      "key": "metlife",
+      "name": "MetLife Stadium",
+      "capacity": 82500,
+      "city": "New York New Jersey",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "mercedesbenz",
+      "name": "Mercedes-Benz Stadium",
+      "capacity": 75000,
+      "city": "Atlanta",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "bankofamerica",
+      "name": "Bank of America Stadium",
+      "capacity": 75000,
+      "city": "Charlotte",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "tql",
+      "name": "TQL Stadium",
+      "capacity": 26000,
+      "city": "Cincinnati",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "rosebowl",
+      "name": "Rose Bowl Stadium",
+      "capacity": 88500,
+      "city": "Los Angeles",
+      "timezone": "UTC-7"
+    },
+    {
+      "key": "hardrock",
+      "name": "Hard Rock Stadium",
+      "capacity": 65000,
+      "city": "Miami Gardens",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "geodis",
+      "name": "GEODIS Park",
+      "capacity": 30000,
+      "city": "Nashville",
+      "timezone": "UTC-5"
+    },
+    {
+      "key": "campingworld",
+      "name": "Camping World Stadium",
+      "capacity": 65000,
+      "city": "Orlando",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "interco",
+      "name": "Inter&Co Stadium",
+      "capacity": 25000,
+      "city": "Orlando",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "lincolnfinancial",
+      "name": "Lincoln Financial Field",
+      "capacity": 69000,
+      "city": "Philadelphia",
+      "timezone": "UTC-4"
+    },
+    {
+      "key": "lumen",
+      "name": "Lumen Field",
+      "capacity": 69000,
+      "city": "Seattle",
+      "timezone": "UTC-7"
+    },
+    {
+      "key": "audifield",
+      "name": "Audi Field",
+      "capacity": 20000,
+      "city": "Washington, D.C.",
+      "timezone": "UTC-4"
+    }
+  ]
+}

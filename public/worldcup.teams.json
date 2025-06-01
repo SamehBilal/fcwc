@@ -1,0 +1,421 @@
+{
+  "name": "FIFA Club World Cup 2025",
+  "teams": [
+    {
+      "name": "Al Ahly",
+      "code": "EGY",
+      "continent": "Africa",
+      "assoc": {
+        "key": "egy",
+        "name": "Egyptian Football Association",
+        "continental": {
+          "name": "Confédération Africaine de Football (CAF)",
+          "code": "CAF"
+        }
+      }
+    },
+    {
+      "name": "Wydad AC",
+      "code": "MAR",
+      "continent": "Africa",
+      "assoc": {
+        "key": "mar",
+        "name": "Fédération Royale Marocaine de Football",
+        "continental": {
+          "name": "Confédération Africaine de Football (CAF)",
+          "code": "CAF"
+        }
+      }
+    },
+    {
+      "name": "Espérance de Tunis",
+      "code": "TUN",
+      "continent": "Africa",
+      "assoc": {
+        "key": "tun",
+        "name": "Fédération Tunisienne de Football",
+        "continental": {
+          "name": "Confédération Africaine de Football (CAF)",
+          "code": "CAF"
+        }
+      }
+    },
+    {
+      "name": "Mamelodi Sundowns",
+      "code": "RSA",
+      "continent": "Africa",
+      "assoc": {
+        "key": "rsa",
+        "name": "South African Football Association",
+        "continental": {
+          "name": "Confédération Africaine de Football (CAF)",
+          "code": "CAF"
+        }
+      }
+    },
+    {
+      "name": "Al Hilal",
+      "code": "KSA",
+      "continent": "Asia",
+      "assoc": {
+        "key": "ksa",
+        "name": "Saudi Arabian Football Federation",
+        "continental": {
+          "name": "Asian Football Confederation (AFC)",
+          "code": "AFC"
+        }
+      }
+    },
+    {
+      "name": "Urawa Red Diamonds",
+      "code": "JPN",
+      "continent": "Asia",
+      "assoc": {
+        "key": "jpn",
+        "name": "Japan Football Association",
+        "continental": {
+          "name": "Asian Football Confederation (AFC)",
+          "code": "AFC"
+        }
+      }
+    },
+    {
+      "name": "Al Ain",
+      "code": "ARE",
+      "continent": "Asia",
+      "assoc": {
+        "key": "are",
+        "name": "UAE Football Association",
+        "continental": {
+          "name": "Asian Football Confederation (AFC)",
+          "code": "AFC"
+        }
+      }
+    },
+    {
+      "name": "Ulsan Hyundai",
+      "code": "KOR",
+      "continent": "Asia",
+      "assoc": {
+        "key": "kor",
+        "name": "Korea Football Association",
+        "continental": {
+          "name": "Asian Football Confederation (AFC)",
+          "code": "AFC"
+        }
+      }
+    },
+    {
+      "name": "Chelsea",
+      "code": "ENG",
+      "continent": "Europe",
+      "assoc": {
+        "key": "eng",
+        "name": "The Football Association",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Real Madrid",
+      "code": "ESP",
+      "continent": "Europe",
+      "assoc": {
+        "key": "esp",
+        "name": "Real Federación Española de Fútbol",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Manchester City",
+      "code": "ENG",
+      "continent": "Europe",
+      "assoc": {
+        "key": "eng",
+        "name": "The Football Association",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Bayern Munich",
+      "code": "GER",
+      "continent": "Europe",
+      "assoc": {
+        "key": "ger",
+        "name": "Deutscher Fußball-Bund",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Paris Saint-Germain",
+      "code": "FRA",
+      "continent": "Europe",
+      "assoc": {
+        "key": "fra",
+        "name": "Fédération Française de Football",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Inter Milan",
+      "code": "ITA",
+      "continent": "Europe",
+      "assoc": {
+        "key": "ita",
+        "name": "Federazione Italiana Giuoco Calcio",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Porto",
+      "code": "POR",
+      "continent": "Europe",
+      "assoc": {
+        "key": "por",
+        "name": "Federação Portuguesa de Futebol",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Benfica",
+      "code": "POR",
+      "continent": "Europe",
+      "assoc": {
+        "key": "por",
+        "name": "Federação Portuguesa de Futebol",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Borussia Dortmund",
+      "code": "GER",
+      "continent": "Europe",
+      "assoc": {
+        "key": "ger",
+        "name": "Deutscher Fußball-Bund",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Juventus",
+      "code": "ITA",
+      "continent": "Europe",
+      "assoc": {
+        "key": "ita",
+        "name": "Federazione Italiana Giuoco Calcio",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Atlético Madrid",
+      "code": "ESP",
+      "continent": "Europe",
+      "assoc": {
+        "key": "esp",
+        "name": "Real Federación Española de Fútbol",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Red Bull Salzburg",
+      "code": "AUT",
+      "continent": "Europe",
+      "assoc": {
+        "key": "aut",
+        "name": "Österreichischer Fußball-Bund",
+        "continental": {
+          "name": "Union of European Football Associations (UEFA)",
+          "code": "UEFA"
+        }
+      }
+    },
+    {
+      "name": "Monterrey",
+      "code": "MEX",
+      "continent": "North America",
+      "assoc": {
+        "key": "mex",
+        "name": "Federación Mexicana de Fútbol Asociación",
+        "continental": {
+          "name": "Confederation of North, Central American and Caribbean Association Football (CONCACAF)",
+          "code": "CONCACAF"
+        }
+      }
+    },
+    {
+      "name": "Inter Miami",
+      "code": "USA",
+      "continent": "North America",
+      "assoc": {
+        "key": "usa",
+        "name": "United States Soccer Federation",
+        "continental": {
+          "name": "Confederation of North, Central American and Caribbean Association Football (CONCACAF)",
+          "code": "CONCACAF"
+        }
+      }
+    },
+    {
+      "name": "Seattle Sounders",
+      "code": "USA",
+      "continent": "North America",
+      "assoc": {
+        "key": "usa",
+        "name": "United States Soccer Federation",
+        "continental": {
+          "name": "Confederation of North, Central American and Caribbean Association Football (CONCACAF)",
+          "code": "CONCACAF"
+        }
+      }
+    },
+    {
+      "name": "Los Angeles FC",
+      "code": "USA",
+      "continent": "North America",
+      "assoc": {
+        "key": "usa",
+        "name": "United States Soccer Federation",
+        "continental": {
+          "name": "Confederation of North, Central American and Caribbean Association Football (CONCACAF)",
+          "code": "CONCACAF"
+        }
+      }
+    },
+    {
+      "name": "Pachuca",
+      "code": "MEX",
+      "continent": "North America",
+      "assoc": {
+        "key": "mex",
+        "name": "Federación Mexicana de Fútbol Asociación",
+        "continental": {
+          "name": "Confederation of North, Central American and Caribbean Association Football (CONCACAF)",
+          "code": "CONCACAF"
+        }
+      }
+    },
+    {
+      "name": "Auckland City",
+      "code": "NZL",
+      "continent": "Oceania",
+      "assoc": {
+        "key": "nzl",
+        "name": "New Zealand Football",
+        "continental": {
+          "name": "Oceania Football Confederation (OFC)",
+          "code": "OFC"
+        }
+      }
+    },
+    {
+      "name": "Palmeiras",
+      "code": "BRA",
+      "continent": "South America",
+      "assoc": {
+        "key": "bra",
+        "name": "Confederação Brasileira de Futebol",
+        "continental": {
+          "name": "Confederación Sudamericana de Fútbol (CONMEBOL)",
+          "code": "CONMEBOL"
+        }
+      }
+    },
+    {
+      "name": "Flamengo",
+      "code": "BRA",
+      "continent": "South America",
+      "assoc": {
+        "key": "bra",
+        "name": "Confederação Brasileira de Futebol",
+        "continental": {
+          "name": "Confederación Sudamericana de Fútbol (CONMEBOL)",
+          "code": "CONMEBOL"
+        }
+      }
+    },
+    {
+      "name": "Fluminense",
+      "code": "BRA",
+      "continent": "South America",
+      "assoc": {
+        "key": "bra",
+        "name": "Confederação Brasileira de Futebol",
+        "continental": {
+          "name": "Confederación Sudamericana de Fútbol (CONMEBOL)",
+          "code": "CONMEBOL"
+        }
+      }
+    },
+    {
+      "name": "Botafogo",
+      "code": "BRA",
+      "continent": "South America",
+      "assoc": {
+        "key": "bra",
+        "name": "Confederação Brasileira de Futebol",
+        "continental": {
+          "name": "Confederación Sudamericana de Fútbol (CONMEBOL)",
+          "code": "CONMEBOL"
+        }
+      }
+    },
+    {
+      "name": "River Plate",
+      "code": "ARG",
+      "continent": "South America",
+      "assoc": {
+        "key": "arg",
+        "name": "Asociación del Fútbol Argentino",
+        "continental": {
+          "name": "Confederación Sudamericana de Fútbol (CONMEBOL)",
+          "code": "CONMEBOL"
+        }
+      }
+    },
+    {
+      "name": "Boca Juniors",
+      "code": "ARG",
+      "continent": "South America",
+      "assoc": {
+        "key": "arg",
+        "name": "Asociación del Fútbol Argentino",
+        "continental": {
+          "name": "Confederación Sudamericana de Fútbol (CONMEBOL)",
+          "code": "CONMEBOL"
+        }
+      }
+    }
+  ]
+}

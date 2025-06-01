@@ -1,0 +1,77 @@
+{
+  "name": "FIFA Club World Cup 2025",
+  "groups": [
+    {
+      "name": "Group A",
+      "teams": [
+        { "name": "Palmeiras", "code": "BRA" },
+        { "name": "Porto", "code": "PRT" },
+        { "name": "Al Ahly", "code": "EGY" },
+        { "name": "Inter Miami", "code": "USA" }
+      ]
+    },
+    {
+      "name": "Group B",
+      "teams": [
+        { "name": "Paris Saint-Germain", "code": "FRA" },
+        { "name": "Atlético Madrid", "code": "ESP" },
+        { "name": "Botafogo", "code": "BRA" },
+        { "name": "Seattle Sounders", "code": "USA" }
+      ]
+    },
+    {
+      "name": "Group C",
+      "teams": [
+        { "name": "Bayern Munich", "code": "GER" },
+        { "name": "Benfica", "code": "PRT" },
+        { "name": "Boca Juniors", "code": "ARG" },
+        { "name": "Auckland City", "code": "NZL" }
+      ]
+    },
+    {
+      "name": "Group D",
+      "teams": [
+        { "name": "Flamengo", "code": "BRA" },
+        { "name": "Chelsea", "code": "GBR" },
+        { "name": "Esperance Sportive de Tunis", "code": "TUN" },
+        { "name": "Los Angeles FC", "code": "USA" }
+      ]
+    },
+    {
+      "name": "Group E",
+      "teams": [
+        { "name": "River Plate", "code": "ARG" },
+        { "name": "Inter Milan", "code": "ITA" },
+        { "name": "CF Monterrey", "code": "MEX" },
+        { "name": "Urawa Red Diamonds", "code": "JPN" }
+      ]
+    },
+    {
+      "name": "Group F",
+      "teams": [
+        { "name": "Fluminense", "code": "BRA" },
+        { "name": "Borussia Dortmund", "code": "GER" },
+        { "name": "Ulsan Hyundai", "code": "KOR" },
+        { "name": "Mamelodi Sundowns", "code": "ZAF" }
+      ]
+    },
+    {
+      "name": "Group G",
+      "teams": [
+        { "name": "Manchester City", "code": "GBR" },
+        { "name": "Juventus", "code": "ITA" },
+        { "name": "Wydad Casablanca", "code": "MAR" },
+        { "name": "Al Ain", "code": "ARE" }
+      ]
+    },
+    {
+      "name": "Group H",
+      "teams": [
+        { "name": "Real Madrid", "code": "ESP" },
+        { "name": "FC Salzburg", "code": "AUT" },
+        { "name": "Al Hilal", "code": "SAU" },
+        { "name": "CF Pachuca", "code": "MEX" }
+      ]
+    }
+  ]
+}
