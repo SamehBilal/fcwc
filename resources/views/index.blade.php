@@ -51,17 +51,17 @@
                 <nav class="flex items-center justify-end gap-4">
                     @auth
                         <a href="{{ url('/dashboard') }}"
-                            class="inline-block px-5 py-1.5 border border-white rounded-sm text-sm leading-normal">
+                            class="inline-block px-5 py-1.5 border border-white rounded-sm text-sm leading-normal" wire:navigate>
                             Dashboard
                         </a>
                     @else
                         <a href="{{ route('login') }}"
-                            class="inline-block px-5 py-1.5 border border-white rounded-sm text-sm leading-normal">
+                            class="inline-block px-5 py-1.5 border border-white rounded-sm text-sm leading-normal" wire:navigate>
                             Log in
                         </a>
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}"
-                                class="inline-block px-5 py-1.5 border border-white rounded-sm text-sm leading-normal">
+                                class="inline-block px-5 py-1.5 border border-white rounded-sm text-sm leading-normal" wire:navigate>
                                 Register
                             </a>
                         @endif
