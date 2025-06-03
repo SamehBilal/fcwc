@@ -13,19 +13,30 @@ new #[Layout('components.layouts.auth')] class extends Component {
     public string $email = '';
     public string $password = '';
     public string $password_confirmation = '';
-
+    public string $phone = '';
+    public string $phone_number = '';
+    public string $country_code = '+20';
     /**
      * Handle an incoming registration request.
      */
     public function register(): void
     {
+        $this->phone = $this->country_code . $this->phone_number;
+
         $validated = $this->validate([
             'name' => ['required', 'string', 'max:255'],
+            'phone' => ['required', 'max:255', 'unique:' . User::class],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $validated['password'] = Hash::make($validated['password']);
+        if (empty($this->phone_number)) {
+            $this->addError('phone_number', 'Phone number is required.');
+            return;
+        }
+
+        $validated['password']  = Hash::make($validated['password']);
+        $validated['phone']     =  $this->phone;
 
         event(new Registered(($user = User::create($validated))));
 
@@ -63,6 +74,18 @@ new #[Layout('components.layouts.auth')] class extends Component {
             placeholder="email@example.com"
         />
 
+        <!-- Phone -->
+        <flux:input.group :label="__('Phone')">
+            <flux:select wire:model="country_code" class="max-w-fit">
+                <!-- Arabic Countries -->
+                <flux:select.option value="+20">Egypt (+20)</flux:select.option>
+            </flux:select>
+
+            <flux:input wire:model="phone_number" type="tel" required placeholder="Enter phone number" />
+
+        </flux:input.group>
+        <flux:error name="phone_number" class="text-red-600 mt-1 text-sm" />
+
         <!-- Password -->
         <flux:input
             wire:model="password"
@@ -86,7 +109,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         />
 
         <div class="flex items-center justify-end">
-            <flux:button type="submit" variant="primary" class="w-full">
+            <flux:button type="submit" variant="primary" class="w-full cursor-pointer">
                 {{ __('Create account') }}
             </flux:button>
         </div>
