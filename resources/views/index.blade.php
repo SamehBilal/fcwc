@@ -35,7 +35,7 @@
     </style>
 </head>
 
-<body class="custom-bg-2 custom-bg text-white relative min-h-screen overflow-hidden">
+<body class="custom-bg text-white relative min-h-screen overflow-hidden">
     {{-- <div class="absolute inset-0 bg-black/60 z-[1] pointer-events-none"></div> --}}
 
     <!-- Background Video -->
