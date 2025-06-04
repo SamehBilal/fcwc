@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
             $table->foreignId('user_id')->nullable()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamp('completed_at')->nullable();
             $table->string('score')->default(0);
             $table->unique(['player_id', 'game_id', 'user_id'], 'unique_player_slot');
             $table->timestamps();

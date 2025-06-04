@@ -23,6 +23,8 @@ class GameUser extends Model
             'created_at'            => 'datetime',
             'updated_at'            => 'datetime',
             'deleted_at'            => 'datetime',
+            'completed_at'          => 'datetime',
+
         ];
     }
     public static function boot()
@@ -59,5 +61,33 @@ class GameUser extends Model
             ->using(GameUser::class)
             ->withPivot('player_id', 'score')
             ->withTimestamps();
+    }
+
+    // Relationship to User model (assuming you have a User model for players)
+    public function player()
+    {
+        return $this->belongsTo(User::class, 'player_id');
+    }
+
+    // Relationship to Game model (if you have one)
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
+
+    // Check if user has already played this game
+    public static function hasUserPlayedGame($playerId, $gameId)
+    {
+        return static::where('player_id', $playerId)
+                    ->where('game_id', $gameId)
+                    ->exists();
+    }
+
+    // Get user's game result
+    public static function getUserGameResult($playerId, $gameId)
+    {
+        return static::where('player_id', $playerId)
+                    ->where('game_id', $gameId)
+                    ->first();
     }
 }
