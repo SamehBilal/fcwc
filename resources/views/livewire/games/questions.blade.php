@@ -36,9 +36,7 @@ new class extends Component {
 
     public function checkIfUserHasPlayed()
     {
-        $existingRecord = GameUser::where('player_id', 1)
-                                ->where('game_id', 1)
-                                ->first();
+        $existingRecord = GameUser::where('player_id', 1)->where('game_id', 1)->first();
 
         if ($existingRecord) {
             $this->hasPlayedBefore = true;
@@ -324,7 +322,7 @@ new class extends Component {
             GameUser::create([
                 'player_id' => 1,
                 'game_id' => 1,
-                'score' => $this->playerScore
+                'score' => $this->playerScore,
             ]);
         } catch (\Exception $e) {
             // Handle any database errors silently or log them
@@ -380,75 +378,70 @@ new class extends Component {
     }
 }; ?>
 
-<div class="{{-- min-h-screen --}} {{-- bg-gradient-to-br --}} {{-- from-slate-50 via-blue-50 to-indigo-100 --}}">
+<div class="min-h-screen">
     @include('partials.settings-heading')
 
     <!-- Score Modal -->
     @if ($showScoreModal)
-        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div
-                class="bg-white/95 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl p-8 max-w-lg w-full mx-4 animate-in fade-in-0 zoom-in-95 duration-300">
+        <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div class="custom-bg border border-gray-700 rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-100">
                 <div class="text-center">
-                    <div
-                        class="mx-auto w-16 h-16 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="mx-auto w-12 h-12 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
 
-                    <h1
-                        class="text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-8">
-                        @if($hasPlayedBefore)
+                    <h1 class="text-lg font-semibold text-white mb-6">
+                        @if ($hasPlayedBefore)
                             Quiz Already Completed!
                         @else
                             Quiz Completed!
                         @endif
                     </h1>
 
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div
-                            class="bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200/50 rounded-xl p-4">
-                            <div class="text-2xl font-bold text-blue-600">{{ $totalQuestions }}</div>
-                            <div class="text-sm text-blue-600/70 font-medium">Total Questions</div>
+                    <div class="grid grid-cols-2 gap-3 mb-6">
+                        <div class="bg-gray-700/50 border border-gray-600 rounded-lg p-3">
+                            <div class="text-lg font-semibold text-white">{{ $totalQuestions }}</div>
+                            <div class="text-sm text-gray-400">Total Questions</div>
                         </div>
-                        <div
-                            class="bg-gradient-to-br from-green-50 to-emerald-100 border border-green-200/50 rounded-xl p-4">
-                            <div class="text-2xl font-bold text-green-600">{{ $hasPlayedBefore ? $previousScore : $playerScore }}</div>
-                            <div class="text-sm text-green-600/70 font-medium">Correct</div>
+                        <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
+                            <div class="text-lg font-semibold text-green-400">
+                                {{ $hasPlayedBefore ? $previousScore : $playerScore }}</div>
+                            <div class="text-sm text-green-400/70">Correct</div>
                         </div>
-                        <div class="bg-gradient-to-br from-red-50 to-rose-100 border border-red-200/50 rounded-xl p-4">
-                            <div class="text-2xl font-bold text-red-600">{{ $hasPlayedBefore ? ($totalQuestions - $previousScore) : $wrongAttempt }}</div>
-                            <div class="text-sm text-red-600/70 font-medium">Incorrect</div>
+                        <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
+                            <div class="text-lg font-semibold text-red-400">
+                                {{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
+                            <div class="text-sm text-red-400/70">Incorrect</div>
                         </div>
-                        <div
-                            class="bg-gradient-to-br from-purple-50 to-violet-100 border border-purple-200/50 rounded-xl p-4">
-                            <div class="text-2xl font-bold text-purple-600">{{ $this->getGradePercentage() }}%</div>
-                            <div class="text-sm text-purple-600/70 font-medium">Score</div>
+                        <div class="bg-white/10 border border-white/20 rounded-lg p-3">
+                            <div class="text-lg font-semibold text-white">{{ $this->getGradePercentage() }}%</div>
+                            <div class="text-sm text-gray-300">Score</div>
                         </div>
                     </div>
 
-                    <div class="mb-8">
-                        <p
-                            class="text-lg font-semibold {{ $this->getRemark()['color'] }} bg-white/50 rounded-lg p-3 border border-gray-200/50">
+                    <div class="mb-6">
+                        <p class="text-sm font-medium text-gray-300 bg-gray-700/50 rounded-lg p-3 border border-gray-600">
                             {{ $this->getRemark()['text'] }}
                         </p>
 
-                        @if($hasPlayedBefore)
-                            <p class="text-sm text-gray-600 mt-3">
+                        @if ($hasPlayedBefore)
+                            <p class="text-sm text-gray-400 mt-3">
                                 You have already completed this quiz. Each player can only take the quiz once.
                             </p>
                         @endif
                     </div>
 
-                    @if(!$hasPlayedBefore)
+                    @if (!$hasPlayedBefore)
                         <button wire:click="resetQuiz"
-                            class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            class="w-full bg-white hover:bg-gray-100 text-gray-900 px-4 py-2 rounded-lg font-medium transition-colors">
                             Start New Quiz
                         </button>
                     @else
                         <button onclick="window.history.back()"
-                            class="w-full bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            class="w-full bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
                             Go Back
                         </button>
                     @endif
@@ -459,27 +452,25 @@ new class extends Component {
 
     <!-- Option Warning Modal -->
     @if ($showOptionModal)
-        <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div
-                class="bg-white/95 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl p-6 max-w-sm w-full mx-4 animate-in fade-in-0 zoom-in-95 duration-300">
+        <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
+            <div class="custom-bg border border-gray-700 rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-100">
                 <div class="text-center">
-                    <div
-                        class="mx-auto w-12 h-12 bg-gradient-to-r from-amber-400 to-orange-400 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="mx-auto w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z">
                             </path>
                         </svg>
                     </div>
 
-                    <h1 class="text-xl font-bold text-gray-800 mb-4">
+                    <h1 class="text-lg font-semibold text-white mb-3">
                         Please Select an Answer
                     </h1>
 
-                    <p class="text-gray-600 mb-6">You need to choose an option before proceeding.</p>
+                    <p class="text-gray-300 mb-4">You need to choose an option before proceeding.</p>
 
                     <button wire:click="closeOptionModal"
-                        class="w-full bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105">
+                        class="w-full custom-bg hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
                         Got it
                     </button>
                 </div>
@@ -488,67 +479,62 @@ new class extends Component {
     @endif
 
     <!-- Quiz Container -->
-    @if(!$hasPlayedBefore)
-        <div class="max-w-4xl mx-auto p-6">
-            <div class="bg-white/70 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
+    @if (!$hasPlayedBefore)
+        <div class="max-w-2xl mx-auto mt-10 p-10">
+            <div class="custom-bg border border-gold-700 rounded-lg shadow-xl overflow-hidden">
                 <!-- Quiz Header -->
-                <div
-                    class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white p-8 relative overflow-hidden">
-                    <div class="absolute inset-0 bg-white/10 backdrop-blur-sm"></div>
-                    <div class="relative z-10">
-                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path
-                                            d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold">{{ $playerScore }}</div>
-                                    <div class="text-sm opacity-90">Score</div>
-                                </div>
+                <div class="custom-bg border-b border-gray-700 p-4">
+                    <div class="flex justify-between items-center gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
                             </div>
-
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold">{{ $questionNumber }} / {{ $totalQuestions }}</div>
-                                    <div class="text-sm opacity-90">Progress</div>
-                                </div>
+                            <div>
+                                <div class="text-lg font-semibold text-white">{{ $playerScore }}</div>
+                                <div class="text-xs text-gray-400">Score</div>
                             </div>
                         </div>
 
-                        <!-- Progress Bar -->
-                        <div class="mt-6">
-                            <div class="w-full bg-white/20 rounded-full h-2">
-                                <div class="bg-gradient-to-r from-yellow-400 to-orange-400 h-2 rounded-full transition-all duration-500"
-                                    style="width: {{ ($questionNumber / $totalQuestions) * 100 }}%"></div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
+                                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
+                                </svg>
                             </div>
+                            <div>
+                                <div class="text-lg font-semibold text-white">{{ $questionNumber }} / {{ $totalQuestions }}</div>
+                                <div class="text-xs text-gray-400">Progress</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="mt-3">
+                        <div class="w-full bg-gray-700 rounded-full h-1.5">
+                            <div class="bg-white h-1.5 rounded-full transition-all duration-300"
+                                style="width: {{ ($questionNumber / $totalQuestions) * 100 }}%"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Question Container -->
-                <div class="p-8 lg:p-12">
+                <div class="p-4">
                     @if (!empty($currentQuestion))
-                        <div class="mb-10">
-                            <div
-                                class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-6 border border-slate-200/50 mb-8">
-                                <h2 class="text-2xl lg:text-3xl font-bold text-gray-800 leading-relaxed">
+                        <div class="mb-6">
+                            <div class="custom-bg rounded-lg p-4 border border-gray-600 mb-4">
+                                <h2 class="text-base font-medium text-white leading-relaxed">
                                     {{ $currentQuestion['question'] }}
                                 </h2>
                             </div>
 
-                            <!-- Options -->
-                            <div class="grid gap-4">
+                            <!-- Options - 2 per row -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 @foreach (['A', 'B', 'C', 'D'] as $option)
                                     @php
                                         $optionKey = 'option' . $option;
@@ -560,62 +546,55 @@ new class extends Component {
                                             $correctOption !== $optionKey;
                                     @endphp
 
-                                    <label
-                                        class="group block cursor-pointer transition-all duration-200 transform hover:scale-[1.02]
-                                {{ !$answerSubmitted ? 'hover:shadow-lg' : '' }}"
-                                        for="option-{{ strtolower($option) }}">
-
-                                        <div
-                                            class="flex items-center justify-between p-6 rounded-2xl border-2 transition-all duration-200
-                                    {{ $isCorrect ? 'border-emerald-400 bg-gradient-to-r from-emerald-50 to-green-50 shadow-lg' : '' }}
-                                    {{ $isWrong ? 'border-red-400 bg-gradient-to-r from-red-50 to-rose-50 shadow-lg' : '' }}
-                                    {{ !$answerSubmitted ? 'border-slate-200 bg-white hover:border-indigo-300 hover:bg-gradient-to-r hover:from-indigo-50 hover:to-blue-50 group-hover:shadow-lg' : '' }}">
+                                    <label class="block cursor-pointer" for="option-{{ strtolower($option) }}">
+                                                                                    <div class="flex items-center p-3 rounded-lg border-2 transition-all duration-200
+                                            {{ $isCorrect ? 'border-green-500/50 bg-green-500/10' : '' }}
+                                            {{ $isWrong ? 'border-red-500/50 bg-red-500/10' : '' }}
+                                            {{ !$answerSubmitted && $selectedAnswer === $optionKey ? 'border-white/70 bg-white/10' : '' }}
+                                            {{ !$answerSubmitted && $selectedAnswer !== $optionKey ? 'border-gray-600 custom-bg hover:border-white/50 hover:bg-white/5' : '' }}">
 
                                             <div class="flex items-center flex-1">
-                                                <div
-                                                    class="flex items-center justify-center w-8 h-8 rounded-full mr-4 font-bold text-sm
-                                            {{ $isCorrect ? 'bg-emerald-500 text-white' : '' }}
-                                            {{ $isWrong ? 'bg-red-500 text-white' : '' }}
-                                            {{ !$answerSubmitted ? 'bg-slate-100 text-slate-600 group-hover:bg-indigo-100 group-hover:text-indigo-600' : '' }}">
+                                                <div class="flex items-center justify-center w-6 h-6 rounded-full mr-3 font-medium text-xs
+                                                    {{ $isCorrect ? 'bg-green-500 text-white' : '' }}
+                                                    {{ $isWrong ? 'bg-red-500 text-white' : '' }}
+                                                    {{ !$answerSubmitted && $selectedAnswer === $optionKey ? 'bg-white text-gray-900' : '' }}
+                                                    {{ !$answerSubmitted && $selectedAnswer !== $optionKey ? 'bg-gray-600 text-gray-300' : '' }}">
                                                     {{ $option }}
                                                 </div>
 
                                                 <input type="radio" id="option-{{ strtolower($option) }}"
-                                                    wire:model="selectedAnswer" value="{{ $optionKey }}" class="sr-only"
-                                                    {{ $answerSubmitted ? 'disabled' : '' }}>
+                                                    wire:model="selectedAnswer" value="{{ $optionKey }}"
+                                                    class="sr-only" {{ $answerSubmitted ? 'disabled' : '' }}>
 
-                                                <span
-                                                    class="text-lg font-medium flex-1
-                                            {{ $isCorrect ? 'text-emerald-700' : '' }}
-                                            {{ $isWrong ? 'text-red-700' : '' }}
-                                            {{ !$answerSubmitted ? 'text-gray-700' : '' }}">
+                                                <span class="text-sm font-medium flex-1
+                                                    {{ $isCorrect ? 'text-green-400' : '' }}
+                                                    {{ $isWrong ? 'text-red-400' : '' }}
+                                                    {{ !$answerSubmitted && $selectedAnswer === $optionKey ? 'text-white' : '' }}
+                                                    {{ !$answerSubmitted && $selectedAnswer !== $optionKey ? 'text-gray-200' : '' }}">
                                                     {{ $currentQuestion[$optionKey] }}
                                                 </span>
                                             </div>
 
-                                            <div class="ml-4">
+                                            <div class="ml-2">
                                                 @if ($isCorrect)
-                                                    <div
-                                                        class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
-                                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
-                                                            viewBox="0 0 24 24">
+                                                    <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                                                        <svg class="w-3 h-3 text-white" fill="none"
+                                                            stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2" d="M5 13l4 4L19 7"></path>
                                                         </svg>
                                                     </div>
                                                 @elseif($isWrong)
-                                                    <div
-                                                        class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                                                        <svg class="w-5 h-5 text-white" fill="none"
+                                                    <div class="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
+                                                        <svg class="w-3 h-3 text-white" fill="none"
                                                             stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round"
                                                                 stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                                         </svg>
                                                     </div>
                                                 @elseif(!$answerSubmitted && $selectedAnswer === $optionKey)
-                                                    <div
-                                                        class="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center">
-                                                        <div class="w-3 h-3 bg-white rounded-full"></div>
+                                                    <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                                                        <div class="w-2 h-2 bg-gray-900 rounded-full"></div>
                                                     </div>
                                                 @endif
                                             </div>
@@ -628,9 +607,9 @@ new class extends Component {
                         <!-- Next Button -->
                         <div class="text-center">
                             <button wire:click="nextQuestion"
-                                class="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-12 py-4 rounded-2xl font-bold text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-2xl">
+                                class="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2.5 rounded-lg font-medium transition-colors">
                                 <span>{{ $answerSubmitted ? ($indexNumber + 1 >= $totalQuestions ? 'Finish Quiz' : 'Next Question') : 'Submit Answer' }}</span>
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
@@ -640,67 +619,5 @@ new class extends Component {
                 </div>
             </div>
         </div>
-        @endif
-    </div>
-
-@push('styles')
-    <style>
-        @keyframes fade-in-0 {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes zoom-in-95 {
-            from {
-                transform: scale(0.95);
-            }
-
-            to {
-                transform: scale(1);
-            }
-        }
-
-        .animate-in {
-            animation: fade-in-0 0.3s ease-out, zoom-in-95 0.3s ease-out;
-        }
-
-        /* Glassmorphism effects */
-        .backdrop-blur-xl {
-            backdrop-filter: blur(16px);
-        }
-
-        .backdrop-blur-sm {
-            backdrop-filter: blur(4px);
-        }
-
-        /* Custom gradient animations */
-        @keyframes gradient-x {
-
-            0%,
-            100% {
-                transform: translateX(0%);
-            }
-
-            50% {
-                transform: translateX(100%);
-            }
-        }
-
-        .animate-gradient-x {
-            animation: gradient-x 15s ease infinite;
-            background-size: 200% 200%;
-        }
-
-        /* Smooth transitions for all interactive elements */
-        * {
-            transition-property: transform, box-shadow, background-color, border-color;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms;
-        }
-    </style>
-@endpush
+    @endif
+</div>
