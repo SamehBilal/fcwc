@@ -378,7 +378,7 @@ new class extends Component {
     }
 }; ?>
 
-<div class="min-h-screen">
+<div class="">
     @include('partials.settings-heading')
 
     <!-- Score Modal -->
