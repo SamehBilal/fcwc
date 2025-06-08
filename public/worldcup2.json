@@ -637,8 +637,8 @@
                     "date": "2018-06-19",
                     "time": "21:00",
                     "team1": {
-                        "name": "Palmeiras",
-                        "code": "PAL"
+                        "name": "Inter Miami",
+                        "code": "IM"
                     },
                     "team2": {
                         "name": "Al Ahly",
@@ -648,8 +648,36 @@
                     "score2": 1,
                     "score1i": null,
                     "score2i": null,
-                    "goals1": [],
-                    "goals2": [],
+                    "goals1": [
+                        {
+                            "name": "A. Fathi",
+                            "minute": 47,
+                            "score1": 1,
+                            "score2": null,
+                            "owngoal": true
+                        },
+                        {
+                            "name": "Cheryshev",
+                            "minute": 59,
+                            "score1": 2,
+                            "score2": 0
+                        },
+                        {
+                            "name": "Dzyuba",
+                            "minute": 62,
+                            "score1": 3,
+                            "score2": 0
+                        }
+                    ],
+                    "goals2": [
+                        {
+                            "name": "M. Salah",
+                            "minute": 73,
+                            "score1": 3,
+                            "score2": 1,
+                            "penalty": true
+                        }
+                    ],
                     "group": "Group A",
                     "stadium": {
                         "key": "saintpetersburg",
