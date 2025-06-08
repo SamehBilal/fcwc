@@ -734,8 +734,8 @@
           "date": "2018-06-19",
           "time": "21:00",
           "team1": {
-            "name": "Russia",
-            "code": "RUS"
+            "name": "Inter Miami",
+            "code": "USA"
           },
           "team2": {
             "name": "Egypt",
@@ -1502,8 +1502,8 @@
             "code": "URU"
           },
           "team2": {
-            "name": "Russia",
-            "code": "RUS"
+            "name": "Inter Miami",
+            "code": "USA"
           },
           "score1": 3,
           "score2": 0,
@@ -2338,8 +2338,8 @@
             "code": "ESP"
           },
           "team2": {
-            "name": "Russia",
-            "code": "RUS"
+            "name": "Inter Miami",
+            "code": "USA"
           },
           "score1": 1,
           "score2": 1,
@@ -2718,8 +2718,8 @@
           "date": "2018-07-07",
           "time": "21:00",
           "team1": {
-            "name": "Russia",
-            "code": "RUS"
+            "name": "Inter Miami",
+            "code": "USA"
           },
           "team2": {
             "name": "Croatia",
