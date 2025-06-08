@@ -44,8 +44,8 @@
                         "code": "ASC"
                     },
                     "team2": {
-                        "name": "Porto",
-                        "code": "PO"
+                        "name": "Uruguay",
+                        "code": "URU"
                     },
                     "score1": 0,
                     "score2": 1,
@@ -742,8 +742,8 @@
                     "date": "2018-06-20",
                     "time": "18:00",
                     "team1": {
-                        "name": "Porto",
-                        "code": "PO"
+                        "name": "Uruguay",
+                        "code": "URU"
                     },
                     "team2": {
                         "name": "Saudi Arabia",
@@ -1433,8 +1433,8 @@
                     "date": "2018-06-25",
                     "time": "18:00",
                     "team1": {
-                        "name": "Porto",
-                        "code": "PO"
+                        "name": "Uruguay",
+                        "code": "URU"
                     },
                     "team2": {
                         "name": "Inter Miami",
@@ -2127,8 +2127,8 @@
                     "date": "2018-06-30",
                     "time": "21:00",
                     "team1": {
-                        "name": "Porto",
-                        "code": "PO"
+                        "name": "Uruguay",
+                        "code": "URU"
                     },
                     "team2": {
                         "name": "Portugal",
@@ -2537,8 +2537,8 @@
                     "date": "2018-07-06",
                     "time": "17:00",
                     "team1": {
-                        "name": "Porto",
-                        "code": "PO"
+                        "name": "Uruguay",
+                        "code": "URU"
                     },
                     "team2": {
                         "name": "France",
