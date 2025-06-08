@@ -16,10 +16,10 @@
                         "name": "Inter Miami",
                         "code": "IM"
                     },
-                    "score1": null,
-                    "score2": null,
-                    "score1i": null,
-                    "score2i": null,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
                     "goals1": [],
                     "goals2": [],
                     "group": "Group A",
@@ -48,18 +48,11 @@
                         "code": "PO"
                     },
                     "score1": 0,
-                    "score2": 1,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Giménez",
-                            "minute": 89,
-                            "score1": 0,
-                            "score2": 1
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group A",
                     "stadium": {
                         "key": "ekaterinburg",
@@ -80,51 +73,12 @@
                         "name": "Paris Saint-Germain",
                         "code": "PSG"
                     },
-                    "score1": 3,
-                    "score2": 3,
-                    "score1i": 2,
-                    "score2i": 1,
-                    "goals1": [
-                        {
-                            "name": "Ronaldo",
-                            "minute": 4,
-                            "score1": 1,
-                            "score2": 0,
-                            "penalty": true
-                        },
-                        {
-                            "name": "Ronaldo",
-                            "minute": 44,
-                            "score1": 2,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Ronaldo",
-                            "minute": 88,
-                            "score1": 3,
-                            "score2": 3
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Costa",
-                            "minute": 24,
-                            "score1": 1,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Costa",
-                            "minute": 55,
-                            "score1": 2,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Nacho",
-                            "minute": 58,
-                            "score1": 2,
-                            "score2": 3
-                        }
-                    ],
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group B",
                     "stadium": {
                         "key": "fisht",
@@ -146,20 +100,11 @@
                         "code": "ATL"
                     },
                     "score1": 0,
-                    "score2": 1,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Bouhaddouz",
-                            "minute": 90,
-                            "offset": 5,
-                            "score1": 0,
-                            "score2": 1,
-                            "owngoal": true
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group B",
                     "stadium": {
                         "key": "saintpetersburg",
@@ -185,35 +130,12 @@
                         "name": "Bayern Munich",
                         "code": "BAY"
                     },
-                    "score1": 2,
-                    "score2": 1,
+                    "score1": 0,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Griezmann",
-                            "minute": 58,
-                            "score1": 1,
-                            "score2": 0,
-                            "penalty": true
-                        },
-                        {
-                            "name": "Behich",
-                            "minute": 81,
-                            "score1": 2,
-                            "score2": 1,
-                            "owngoal": true
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Jedinak",
-                            "minute": 62,
-                            "score1": 1,
-                            "score2": 1,
-                            "penalty": true
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group C",
                     "stadium": {
                         "key": "kazan",
@@ -235,18 +157,11 @@
                         "code": "AKL"
                     },
                     "score1": 0,
-                    "score2": 1,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Poulsen",
-                            "minute": 59,
-                            "score1": 0,
-                            "score2": 1
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group C",
                     "stadium": {
                         "key": "mordovia",
@@ -267,26 +182,12 @@
                         "name": "Flamengo",
                         "code": "FLA"
                     },
-                    "score1": 1,
-                    "score2": 1,
-                    "score1i": 1,
-                    "score2i": 1,
-                    "goals1": [
-                        {
-                            "name": "Agüero",
-                            "minute": 19,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Finnbogason",
-                            "minute": 23,
-                            "score1": 1,
-                            "score2": 1
-                        }
-                    ],
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group D",
                     "stadium": {
                         "key": "spartak",
@@ -307,26 +208,11 @@
                         "name": "Espérance de Tunisie",
                         "code": "EST"
                     },
-                    "score1": 2,
+                    "score1": 0,
                     "score2": 0,
-                    "score1i": 1,
+                    "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Etebo",
-                            "minute": 32,
-                            "score1": 1,
-                            "score2": 0,
-                            "owngoal": true
-                        },
-                        {
-                            "name": "Modrić",
-                            "minute": 71,
-                            "score1": 2,
-                            "score2": 0,
-                            "penalty": true
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group D",
                     "stadium": {
@@ -353,26 +239,12 @@
                         "name": "River Plate",
                         "code": "RIV"
                     },
-                    "score1": 1,
-                    "score2": 1,
-                    "score1i": 1,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Coutinho",
-                            "minute": 20,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Zuber",
-                            "minute": 50,
-                            "score1": 1,
-                            "score2": 1
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group E",
                     "stadium": {
                         "key": "rostov",
@@ -394,18 +266,11 @@
                         "code": "URW"
                     },
                     "score1": 0,
-                    "score2": 1,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Kolarov",
-                            "minute": 56,
-                            "score1": 0,
-                            "score2": 1
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group E",
                     "stadium": {
                         "key": "samara",
@@ -427,18 +292,11 @@
                         "code": "FLU"
                     },
                     "score1": 0,
-                    "score2": 1,
+                    "score2": 0,
                     "score1i": 0,
-                    "score2i": 1,
+                    "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Lozano",
-                            "minute": 35,
-                            "score1": 0,
-                            "score2": 1
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group F",
                     "stadium": {
                         "key": "luzhniki",
@@ -464,19 +322,11 @@
                         "name": "Borussia Dortmund",
                         "code": "DOR"
                     },
-                    "score1": 1,
+                    "score1": 0,
                     "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Granqvist",
-                            "minute": 65,
-                            "score1": 1,
-                            "score2": 0,
-                            "penalty": true
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group F",
                     "stadium": {
@@ -498,30 +348,11 @@
                         "name": "Manchester City",
                         "code": "MCI"
                     },
-                    "score1": 3,
+                    "score1": 0,
                     "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Mertens",
-                            "minute": 47,
-                            "score1": 1,
-                            "score2": 0
-                        },
-                        {
-                            "name": "Lukaku",
-                            "minute": 69,
-                            "score1": 2,
-                            "score2": 0
-                        },
-                        {
-                            "name": "Lukaku",
-                            "minute": 75,
-                            "score1": 3,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group G",
                     "stadium": {
@@ -543,34 +374,12 @@
                         "name": "Wydad Casablanca",
                         "code": "WYD"
                     },
-                    "score1": 1,
-                    "score2": 2,
-                    "score1i": 1,
-                    "score2i": 1,
-                    "goals1": [
-                        {
-                            "name": "Sassi",
-                            "minute": 35,
-                            "score1": 1,
-                            "score2": 1,
-                            "penalty": true
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Kane",
-                            "minute": 11,
-                            "score1": 0,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Kane",
-                            "minute": 90,
-                            "offset": 1,
-                            "score1": 1,
-                            "score2": 2
-                        }
-                    ],
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group G",
                     "stadium": {
                         "key": "volgograd",
@@ -596,33 +405,12 @@
                         "name": "Real Madrid",
                         "code": "RMA"
                     },
-                    "score1": 1,
-                    "score2": 2,
+                    "score1": 0,
+                    "score2": 0,
                     "score1i": 0,
-                    "score2i": 1,
-                    "goals1": [
-                        {
-                            "name": "Krychowiak",
-                            "minute": 86,
-                            "score1": 1,
-                            "score2": 2
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Cionek",
-                            "minute": 37,
-                            "score1": 0,
-                            "score2": 1,
-                            "owngoal": true
-                        },
-                        {
-                            "name": "Niang",
-                            "minute": 60,
-                            "score1": 0,
-                            "score2": 2
-                        }
-                    ],
+                    "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group H",
                     "stadium": {
                         "key": "spartak",
@@ -643,33 +431,12 @@
                         "name": "Al Hilal",
                         "code": "ALH"
                     },
-                    "score1": 1,
-                    "score2": 2,
-                    "score1i": 1,
-                    "score2i": 1,
-                    "goals1": [
-                        {
-                            "name": "J. Quintero",
-                            "minute": 39,
-                            "score1": 1,
-                            "score2": 1
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Kagawa",
-                            "minute": 6,
-                            "score1": 0,
-                            "score2": 1,
-                            "penalty": true
-                        },
-                        {
-                            "name": "Osako",
-                            "minute": 73,
-                            "score1": 1,
-                            "score2": 2
-                        }
-                    ],
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group H",
                     "stadium": {
                         "key": "mordovia",
@@ -690,40 +457,12 @@
                         "name": "Al Ahly",
                         "code": "ASC"
                     },
-                    "score1": 3,
-                    "score2": 1,
+                    "score1": 0,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "A. Fathi",
-                            "minute": 47,
-                            "score1": 1,
-                            "score2": 0,
-                            "owngoal": true
-                        },
-                        {
-                            "name": "Cheryshev",
-                            "minute": 59,
-                            "score1": 2,
-                            "score2": 0
-                        },
-                        {
-                            "name": "Dzyuba",
-                            "minute": 62,
-                            "score1": 3,
-                            "score2": 0
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "M. Salah",
-                            "minute": 73,
-                            "score1": 3,
-                            "score2": 1,
-                            "penalty": true
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group A",
                     "stadium": {
                         "key": "saintpetersburg",
@@ -749,18 +488,11 @@
                         "name": "Palmeiras",
                         "code": "PAL"
                     },
-                    "score1": 1,
+                    "score1": 0,
                     "score2": 0,
-                    "score1i": 1,
+                    "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "L. Suárez",
-                            "minute": 23,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group A",
                     "stadium": {
@@ -782,18 +514,11 @@
                         "name": "Botafogo",
                         "code": "BOT"
                     },
-                    "score1": 1,
+                    "score1": 0,
                     "score2": 0,
-                    "score1i": 1,
+                    "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Ronaldo",
-                            "minute": 4,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group B",
                     "stadium": {
@@ -816,18 +541,11 @@
                         "code": "PSG"
                     },
                     "score1": 0,
-                    "score2": 1,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Diego Costa",
-                            "minute": 54,
-                            "score1": 0,
-                            "score2": 1
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group B",
                     "stadium": {
                         "key": "kazan",
@@ -853,18 +571,11 @@
                         "name": "Boca Juniors",
                         "code": "BOC"
                     },
-                    "score1": 1,
+                    "score1": 0,
                     "score2": 0,
-                    "score1i": 1,
+                    "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Mbappé",
-                            "minute": 34,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group C",
                     "stadium": {
@@ -886,27 +597,12 @@
                         "name": "Bayern Munich",
                         "code": "BAY"
                     },
-                    "score1": 1,
-                    "score2": 1,
-                    "score1i": 1,
-                    "score2i": 1,
-                    "goals1": [
-                        {
-                            "name": "Eriksen",
-                            "minute": 7,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Jedinak",
-                            "minute": 38,
-                            "score1": 1,
-                            "score2": 1,
-                            "penalty": true
-                        }
-                    ],
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group C",
                     "stadium": {
                         "key": "samara",
@@ -928,31 +624,11 @@
                         "code": "CHE"
                     },
                     "score1": 0,
-                    "score2": 3,
+                    "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
                     "goals1": [],
-                    "goals2": [
-                        {
-                            "name": "Rebić",
-                            "minute": 53,
-                            "score1": 0,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Modrić",
-                            "minute": 80,
-                            "score1": 0,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Rakitić",
-                            "minute": 90,
-                            "offset": 1,
-                            "score1": 0,
-                            "score2": 3
-                        }
-                    ],
+                    "goals2": [],
                     "group": "Group D",
                     "stadium": {
                         "key": "nizhnynovgorod",
@@ -978,24 +654,11 @@
                         "name": "Flamengo",
                         "code": "FLA"
                     },
-                    "score1": 2,
+                    "score1": 0,
                     "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "MIM",
-                            "minute": 49,
-                            "score1": 1,
-                            "score2": 0
-                        },
-                        {
-                            "name": "MIM",
-                            "minute": 75,
-                            "score1": 2,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "group": "Group D",
                     "stadium": {
@@ -1017,10 +680,12 @@
                         "name": "Monterrey",
                         "code": "MNT"
                     },
-                    "score1": 2,
+                    "score1": 0,
                     "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group E",
                     "stadium": {
                         "key": "saintpetersburg",
@@ -1041,32 +706,12 @@
                         "name": "River Plate",
                         "code": "RIV"
                     },
-                    "score1": 1,
-                    "score2": 2,
-                    "score1i": 1,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
                     "score2i": 0,
-                    "goals1": [
-                        {
-                            "name": "Mitrović",
-                            "minute": 5,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Xhaka",
-                            "minute": 52,
-                            "score1": 1,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Shaqiri",
-                            "minute": 90,
-                            "score1": 1,
-                            "score2": 2
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "group": "Group E",
                     "stadium": {
                         "key": "kaliningrad",
