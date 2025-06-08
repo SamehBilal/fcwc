@@ -2124,233 +2124,137 @@
             "matches": [
                 {
                     "num": 49,
-                    "date": "2018-06-30",
-                    "time": "21:00",
+                    "date": "2025-06-28",
+                    "time": "19:00",
                     "team1": {
-                        "name": "Porto",
-                        "code": "PO"
+                        "name": "Group A Winner",
+                        "code": "1A"
                     },
                     "team2": {
-                        "name": "Portugal",
-                        "code": "POR"
+                        "name": "Group B Runner-up",
+                        "code": "2B"
                     },
-                    "score1": 2,
-                    "score2": 1,
-                    "score1i": 1,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
                     "score2i": 0,
                     "score1et": null,
                     "score2et": null,
                     "score1p": null,
                     "score2p": null,
                     "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Edinson Cavani",
-                            "minute": 7,
-                            "score1": 1,
-                            "score2": 0
-                        },
-                        {
-                            "name": "Edinson Cavani",
-                            "minute": 62,
-                            "score1": 2,
-                            "score2": 1
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Pepe",
-                            "minute": 55,
-                            "score1": 1,
-                            "score2": 1
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "stadium": {
-                        "key": "fisht",
-                        "name": "Fisht Stadium"
+                        "key": "lincoln",
+                        "name": "Lincoln Financial Field"
                     },
-                    "city": "Sochi",
-                    "timezone": "UTC+3"
+                    "city": "Philadelphia",
+                    "timezone": "UTC-4"
                 },
                 {
                     "num": 50,
-                    "date": "2018-06-30",
-                    "time": "17:00",
+                    "date": "2025-06-28",
+                    "time": "23:00",
                     "team1": {
-                        "name": "France",
-                        "code": "FRA"
+                        "name": "Group C Winner",
+                        "code": "1C"
                     },
                     "team2": {
-                        "name": "Argentina",
-                        "code": "ARG"
+                        "name": "Group D Runner-up",
+                        "code": "2D"
                     },
-                    "score1": 4,
-                    "score2": 3,
-                    "score1i": 1,
-                    "score2i": 1,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
                     "score1et": null,
                     "score2et": null,
                     "score1p": null,
                     "score2p": null,
                     "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Antoine Griezmann",
-                            "minute": 13,
-                            "score1": 1,
-                            "score2": 0,
-                            "penalty": true
-                        },
-                        {
-                            "name": "Benjamin Pavard",
-                            "minute": 57,
-                            "score1": 2,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Kylian Mbappé",
-                            "minute": 64,
-                            "score1": 3,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Kylian Mbappé",
-                            "minute": 68,
-                            "score1": 4,
-                            "score2": 2
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Ángel Di María",
-                            "minute": 41,
-                            "score1": 1,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Gabriel Mercado",
-                            "minute": 48,
-                            "score1": 1,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Sergio Agüero",
-                            "minute": 90,
-                            "offset": 3,
-                            "score1": 4,
-                            "score2": 3
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "stadium": {
-                        "key": "kazan",
-                        "name": "Kazan Arena"
+                        "key": "bankofamerica",
+                        "name": "Bank of America Stadium"
                     },
-                    "city": "Kazan",
-                    "timezone": "UTC+3"
+                    "city": "Charlotte",
+                    "timezone": "UTC-4"
                 },
                 {
                     "num": 51,
-                    "date": "2018-07-01",
-                    "time": "17:00",
+                    "date": "2025-06-29",
+                    "time": "19:00",
                     "team1": {
-                        "name": "Spain",
-                        "code": "RMA"
+                        "name": "Group B Winner",
+                        "code": "1B"
                     },
                     "team2": {
-                        "name": "Inter Miami",
-                        "code": "IM"
+                        "name": "Group A Runner-up",
+                        "code": "2A"
                     },
-                    "score1": 1,
-                    "score2": 1,
-                    "score1i": 1,
-                    "score2i": 1,
-                    "score1et": 1,
-                    "score2et": 1,
-                    "score1p": 3,
-                    "score2p": 4,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "score1et": null,
+                    "score2et": null,
+                    "score1p": null,
+                    "score2p": null,
                     "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Sergei Ignashevich",
-                            "minute": 12,
-                            "score1": 1,
-                            "score2": 0,
-                            "owngoal": true
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Artem Dzyuba",
-                            "minute": 41,
-                            "score1": 1,
-                            "score2": 1,
-                            "penalty": true
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "stadium": {
-                        "key": "luzhniki",
-                        "name": "Luzhniki Stadium"
+                        "key": "mercedesbenz",
+                        "name": "Mercedes-Benz Stadium"
                     },
-                    "city": "Moscow",
-                    "timezone": "UTC+3"
+                    "city": "Atlanta",
+                    "timezone": "UTC-4"
                 },
                 {
                     "num": 52,
-                    "date": "2018-07-01",
-                    "time": "21:00",
+                    "date": "2025-06-29",
+                    "time": "23:00",
                     "team1": {
-                        "name": "Croatia",
-                        "code": "CRO"
+                        "name": "Group D Winner",
+                        "code": "1D"
                     },
                     "team2": {
-                        "name": "Denmark",
-                        "code": "DEN"
+                        "name": "Group C Runner-up",
+                        "code": "2C"
                     },
-                    "score1": 1,
-                    "score2": 1,
-                    "score1i": 1,
-                    "score2i": 1,
-                    "score1et": 1,
-                    "score2et": 1,
-                    "score1p": 3,
-                    "score2p": 2,
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "score1et": null,
+                    "score2et": null,
+                    "score1p": null,
+                    "score2p": null,
                     "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Mario Mandžukić",
-                            "minute": 4,
-                            "score1": 1,
-                            "score2": 1
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Mathias Jørgensen",
-                            "minute": 1,
-                            "score1": 0,
-                            "score2": 1
-                        }
-                    ],
+                    "goals1": [],
+                    "goals2": [],
                     "stadium": {
-                        "key": "nizhnynovgorod",
-                        "name": "Nizhny Novgorod Stadium"
+                        "key": "hardrock",
+                        "name": "Hard Rock Stadium"
                     },
-                    "city": "Nizhny Novgorod",
-                    "timezone": "UTC+3"
+                    "city": "Miami",
+                    "timezone": "UTC-4"
                 },
                 {
                     "num": 53,
-                    "date": "2018-07-02",
-                    "time": "18:00",
+                    "date": "2025-06-30",
+                    "time": "22:00",
                     "team1": {
-                        "name": "Brazil",
-                        "code": "BRA"
+                        "name": "Group E Winner",
+                        "code": "1E"
                     },
                     "team2": {
-                        "name": "Mexico",
-                        "code": "MEX"
+                        "name": "Group F Runner-up",
+                        "code": "2F"
                     },
-                    "score1": 2,
+                    "score1": 0,
                     "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
@@ -2359,104 +2263,28 @@
                     "score1p": null,
                     "score2p": null,
                     "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Neymar",
-                            "minute": 51,
-                            "score1": 1,
-                            "score2": 0
-                        },
-                        {
-                            "name": "Roberto Firmino",
-                            "minute": 88,
-                            "score1": 2,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "stadium": {
-                        "key": "samara",
-                        "name": "Samara Arena"
+                        "key": "bankofamerica",
+                        "name": "Bank of America Stadium"
                     },
-                    "city": "Samara",
-                    "timezone": "UTC+4"
+                    "city": "Charlotte",
+                    "timezone": "UTC-4"
                 },
                 {
                     "num": 54,
-                    "date": "2018-07-02",
-                    "time": "21:00",
+                    "date": "2025-07-01",
+                    "time": "04:00",
                     "team1": {
-                        "name": "Belgium",
-                        "code": "BEL"
+                        "name": "Group G Winner",
+                        "code": "1G"
                     },
                     "team2": {
-                        "name": "Japan",
-                        "code": "JPN"
+                        "name": "Group H Runner-up",
+                        "code": "2H"
                     },
-                    "score1": 3,
-                    "score2": 2,
-                    "score1i": 0,
-                    "score2i": 0,
-                    "score1et": null,
-                    "score2et": null,
-                    "score1p": null,
-                    "score2p": null,
-                    "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Jan Vertonghen",
-                            "minute": 69,
-                            "score1": 1,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Marouane Fellaini",
-                            "minute": 74,
-                            "score1": 2,
-                            "score2": 2
-                        },
-                        {
-                            "name": "Nacer Chadli",
-                            "minute": 90,
-                            "offset": 4,
-                            "score1": 3,
-                            "score2": 2
-                        }
-                    ],
-                    "goals2": [
-                        {
-                            "name": "Genki Haraguchi",
-                            "minute": 48,
-                            "score1": 0,
-                            "score2": 1
-                        },
-                        {
-                            "name": "Takashi Inui",
-                            "minute": 52,
-                            "score1": 0,
-                            "score2": 2
-                        }
-                    ],
-                    "stadium": {
-                        "key": "rostov",
-                        "name": "Rostov Arena"
-                    },
-                    "city": "Rostov-on-Don",
-                    "timezone": "UTC+3"
-                },
-                {
-                    "num": 55,
-                    "date": "2018-07-03",
-                    "time": "17:00",
-                    "team1": {
-                        "name": "Sweden",
-                        "code": "SWE"
-                    },
-                    "team2": {
-                        "name": "Switzerland",
-                        "code": "SUI"
-                    },
-                    "score1": 1,
+                    "score1": 0,
                     "score2": 0,
                     "score1i": 0,
                     "score2i": 0,
@@ -2465,33 +2293,56 @@
                     "score1p": null,
                     "score2p": null,
                     "knockout": true,
-                    "goals1": [
-                        {
-                            "name": "Emil Forsberg",
-                            "minute": 66,
-                            "score1": 1,
-                            "score2": 0
-                        }
-                    ],
+                    "goals1": [],
                     "goals2": [],
                     "stadium": {
-                        "key": "saintpetersburg",
-                        "name": "Saint Petersburg Stadium"
+                        "key": "campingworld",
+                        "name": "Camping World Stadium"
                     },
-                    "city": "Saint Petersburg",
-                    "timezone": "UTC+3"
+                    "city": "Orlando",
+                    "timezone": "UTC-4"
+                },
+                {
+                    "num": 55,
+                    "date": "2025-07-01",
+                    "time": "22:00",
+                    "team1": {
+                        "name": "Group H Winner",
+                        "code": "1H"
+                    },
+                    "team2": {
+                        "name": "Group G Runner-up",
+                        "code": "2G"
+                    },
+                    "score1": 0,
+                    "score2": 0,
+                    "score1i": 0,
+                    "score2i": 0,
+                    "score1et": null,
+                    "score2et": null,
+                    "score1p": null,
+                    "score2p": null,
+                    "knockout": true,
+                    "goals1": [],
+                    "goals2": [],
+                    "stadium": {
+                        "key": "hardrock",
+                        "name": "Hard Rock Stadium"
+                    },
+                    "city": "Miami",
+                    "timezone": "UTC-4"
                 },
                 {
                     "num": 56,
                     "date": "2025-07-02",
                     "time": "04:00",
                     "team1": {
-                        "name": "1A",
-                        "code": "1A"
+                        "name": "Group F Winner",
+                        "code": "1F"
                     },
                     "team2": {
-                        "name": "1A",
-                        "code": "1A"
+                        "name": "Group E Runner-up",
+                        "code": "2E"
                     },
                     "score1": 0,
                     "score2": 0,
