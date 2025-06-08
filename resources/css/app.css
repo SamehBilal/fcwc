@@ -78,6 +78,8 @@ select:focus[data-flux-control] {
     background-position-x: center;
     background-image: url('../../public/FIFA Club World Cup_1920x1080.jpg');
     background-blend-mode: multiply;
+    background-attachment: fixed; /* ✅ makes it stay fixed */
+
 }
 
 .bg-video {
