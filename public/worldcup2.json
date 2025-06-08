@@ -37,29 +37,36 @@
             "matches": [
                 {
                     "num": 2,
-                    "date": "2025-06-15",
-                    "time": "19:00",
+                    "date": "2018-06-15",
+                    "time": "17:00",
                     "team1": {
-                        "name": "Bayern Munich",
-                        "code": "BM"
+                        "name": "ASCpt",
+                        "code": "ASC"
                     },
                     "team2": {
-                        "name": "Auckland City",
-                        "code": "AC"
+                        "name": "Uruguay",
+                        "code": "URU"
                     },
-                    "score1": null,
-                    "score2": null,
-                    "score1i": null,
-                    "score2i": null,
+                    "score1": 0,
+                    "score2": 1,
+                    "score1i": 0,
+                    "score2i": 0,
                     "goals1": [],
-                    "goals2": [],
-                    "group": "Group C",
+                    "goals2": [
+                        {
+                            "name": "Giménez",
+                            "minute": 89,
+                            "score1": 0,
+                            "score2": 1
+                        }
+                    ],
+                    "group": "Group A",
                     "stadium": {
-                        "key": "tql",
-                        "name": "TQL Stadium"
+                        "key": "ekaterinburg",
+                        "name": "Ekaterinburg Arena"
                     },
-                    "city": "Cincinnati",
-                    "timezone": "UTC-4"
+                    "city": "Ekaterinburg",
+                    "timezone": "UTC+5"
                 },
                 {
                     "num": 3,
