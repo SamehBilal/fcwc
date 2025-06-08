@@ -491,12 +491,12 @@
                     "date": "2018-06-18",
                     "time": "18:00",
                     "team1": {
-                        "name": "Belgium",
-                        "code": "BEL"
+                        "name": "Juventus",
+                        "code": "JUV"
                     },
                     "team2": {
-                        "name": "Panama",
-                        "code": "PAN"
+                        "name": "Manchester City",
+                        "code": "MCI"
                     },
                     "score1": 3,
                     "score2": 0,
@@ -536,12 +536,12 @@
                     "date": "2018-06-18",
                     "time": "21:00",
                     "team1": {
-                        "name": "Tunisia",
-                        "code": "TUN"
+                        "name": "Al Ain",
+                        "code": "AIN"
                     },
                     "team2": {
-                        "name": "England",
-                        "code": "ENG"
+                        "name": "Wydad Casablanca",
+                        "code": "WYD"
                     },
                     "score1": 1,
                     "score2": 2,
@@ -1180,12 +1180,12 @@
                     "date": "2018-06-23",
                     "time": "15:00",
                     "team1": {
-                        "name": "Belgium",
-                        "code": "BEL"
+                        "name": "Juventus",
+                        "code": "JUV"
                     },
                     "team2": {
-                        "name": "Tunisia",
-                        "code": "TUN"
+                        "name": "Al Ain",
+                        "code": "AIN"
                     },
                     "score1": 5,
                     "score2": 2,
@@ -1258,12 +1258,12 @@
                     "date": "2018-06-24",
                     "time": "15:00",
                     "team1": {
-                        "name": "England",
-                        "code": "ENG"
+                        "name": "Wydad Casablanca",
+                        "code": "WYD"
                     },
                     "team2": {
-                        "name": "Panama",
-                        "code": "PAN"
+                        "name": "Manchester City",
+                        "code": "MCI"
                     },
                     "score1": 6,
                     "score2": 1,
@@ -1976,12 +1976,12 @@
                     "date": "2018-06-28",
                     "time": "20:00",
                     "team1": {
-                        "name": "England",
-                        "code": "ENG"
+                        "name": "Wydad Casablanca",
+                        "code": "WYD"
                     },
                     "team2": {
-                        "name": "Belgium",
-                        "code": "BEL"
+                        "name": "Juventus",
+                        "code": "JUV"
                     },
                     "score1": 0,
                     "score2": 1,
@@ -2009,12 +2009,12 @@
                     "date": "2018-06-28",
                     "time": "21:00",
                     "team1": {
-                        "name": "Panama",
-                        "code": "PAN"
+                        "name": "Manchester City",
+                        "code": "MCI"
                     },
                     "team2": {
-                        "name": "Tunisia",
-                        "code": "TUN"
+                        "name": "Al Ain",
+                        "code": "AIN"
                     },
                     "score1": 1,
                     "score2": 2,
