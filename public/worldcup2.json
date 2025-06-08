@@ -40,7 +40,7 @@
                     "date": "2018-06-15",
                     "time": "17:00",
                     "team1": {
-                        "name": "ASCpt",
+                        "name": "Al Ahly",
                         "code": "ASC"
                     },
                     "team2": {
@@ -687,7 +687,7 @@
                         "code": "IM"
                     },
                     "team2": {
-                        "name": "ASCpt",
+                        "name": "Al Ahly",
                         "code": "ASC"
                     },
                     "score1": 3,
@@ -1483,7 +1483,7 @@
                         "code": "KSA"
                     },
                     "team2": {
-                        "name": "ASCpt",
+                        "name": "Al Ahly",
                         "code": "ASC"
                     },
                     "score1": 2,
