@@ -6,18 +6,18 @@
       "matches": [
         {
           "num": 1,
-          "date": "2025-06-15",
+          "date": "2025-06-14",
           "time": "03:00",
           "team1": {
-            "name": "Inter Miami",
-            "code": "USA"
+            "name": "Russia",
+            "code": "RUS"
           },
           "team2": {
             "name": "Saudi Arabia",
             "code": "KSA"
           },
           "score1": 5,
-          "score2": 0,
+          "score2": null,
           "score1i": 2,
           "score2i": 0,
           "goals1": [
