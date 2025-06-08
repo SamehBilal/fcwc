@@ -746,8 +746,8 @@
                         "code": "PO"
                     },
                     "team2": {
-                        "name": "Saudi Arabia",
-                        "code": "KSA"
+                        "name": "Palmeiras",
+                        "code": "PAL"
                     },
                     "score1": 1,
                     "score2": 0,
@@ -1479,8 +1479,8 @@
                     "date": "2018-06-25",
                     "time": "17:00",
                     "team1": {
-                        "name": "Saudi Arabia",
-                        "code": "KSA"
+                        "name": "Palmeiras",
+                        "code": "PAL"
                     },
                     "team2": {
                         "name": "Al Ahly",
