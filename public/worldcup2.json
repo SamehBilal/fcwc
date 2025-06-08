@@ -40,8 +40,8 @@
                     "date": "2018-06-15",
                     "time": "17:00",
                     "team1": {
-                        "name": "Egypt",
-                        "code": "EGY"
+                        "name": "ASCpt",
+                        "code": "ASC"
                     },
                     "team2": {
                         "name": "Uruguay",
@@ -684,11 +684,11 @@
                     "time": "21:00",
                     "team1": {
                         "name": "Inter Miami",
-                        "code": "USA"
+                        "code": "IM"
                     },
                     "team2": {
-                        "name": "Egypt",
-                        "code": "EGY"
+                        "name": "ASCpt",
+                        "code": "ASC"
                     },
                     "score1": 3,
                     "score2": 1,
@@ -984,13 +984,13 @@
                     "score2i": 0,
                     "goals1": [
                         {
-                            "name": "Musa",
+                            "name": "MIM",
                             "minute": 49,
                             "score1": 1,
                             "score2": 0
                         },
                         {
-                            "name": "Musa",
+                            "name": "MIM",
                             "minute": 75,
                             "score1": 2,
                             "score2": 0
@@ -1438,7 +1438,7 @@
                     },
                     "team2": {
                         "name": "Inter Miami",
-                        "code": "USA"
+                        "code": "IM"
                     },
                     "score1": 3,
                     "score2": 0,
@@ -1483,8 +1483,8 @@
                         "code": "KSA"
                     },
                     "team2": {
-                        "name": "Egypt",
-                        "code": "EGY"
+                        "name": "ASCpt",
+                        "code": "ASC"
                     },
                     "score1": 2,
                     "score2": 1,
@@ -2258,7 +2258,7 @@
                     },
                     "team2": {
                         "name": "Inter Miami",
-                        "code": "USA"
+                        "code": "IM"
                     },
                     "score1": 1,
                     "score2": 1,
@@ -2632,7 +2632,7 @@
                     "time": "21:00",
                     "team1": {
                         "name": "Inter Miami",
-                        "code": "USA"
+                        "code": "IM"
                     },
                     "team2": {
                         "name": "Croatia",
