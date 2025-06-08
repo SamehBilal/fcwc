@@ -1,20 +1,20 @@
 {
-  "name": "World Cup 2018",
+  "name": "Fifa Club World Cup 2025",
   "rounds": [
     {
       "name": "Matchday 1",
       "matches": [
         {
           "num": 1,
-          "date": "2018-06-14",
-          "time": "18:00",
+          "date": "2025-06-15",
+          "time": "03:00",
           "team1": {
-            "name": "Russia",
-            "code": "RUS"
+            "name": "Inter Miami",
+            "code": "USA"
           },
           "team2": {
-            "name": "Saudi Arabia",
-            "code": "KSA"
+            "name": "Al Ahly",
+            "code": "EGY"
           },
           "score1": 5,
           "score2": 0,
