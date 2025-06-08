@@ -1,5 +1,5 @@
 {
-  "name": "Fifa Club World Cup 2025",
+  "name": "World Cup 2018",
   "rounds": [
     {
       "name": "Matchday 1",
@@ -7,7 +7,7 @@
         {
           "num": 1,
           "date": "2025-06-14",
-          "time": "03:00",
+          "time": "18:00",
           "team1": {
             "name": "Russia",
             "code": "RUS"
