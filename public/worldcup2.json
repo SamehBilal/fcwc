@@ -660,6 +660,7 @@
                     "score2i": 0,
                     "goals1": [],
                     "goals2": [],
+                    "group": "Group D",
                     "stadium": {
                         "key": "lincolnfinancial",
                         "name": "Lincoln Financial Field"
