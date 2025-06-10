@@ -17,6 +17,12 @@ new #[Layout('components.layouts.auth')] class extends Component {
     {
         $this->phone = Auth::user()->phone;
     }
+
+    function normalizeEgyptianPhone($text)
+    {
+        return preg_replace('/(\+20)0/', '$1', $text);
+    }
+
     /**
      * Handle an incoming registration request.
      */
@@ -34,7 +40,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
         }
 
         $user = Auth::user();
-        $user->phone = $this->phone;
+        $user->phone = $this->normalizeEgyptianPhone($this->phone);
         $user->save();
 
         $this->redirectIntended(route('dashboard', absolute: false), navigate: true);
