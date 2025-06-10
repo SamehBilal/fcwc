@@ -71,6 +71,12 @@ new #[Layout('components.layouts.auth')] class extends Component {
     {
         return Str::transliterate(Str::lower($this->email) . '|' . request()->ip());
     }
+
+    public function redirectToGoogle()
+    {
+        return redirect()->away(route('auth.google'));
+    }
+
 }; ?>
 <div class="w-80 max-w-80 space-y-6">
     <div class="flex justify-center opacity-50">
@@ -89,7 +95,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
     <x-auth-header :title="__('Welcome back')" :description="__('')" />
     {{-- <flux:heading class="text-center" size="xl">Welcome back</flux:heading> --}}
     <div class="space-y-4">
-        <flux:button class="w-full cursor-pointer" {{-- variant="google" --}} {{-- wire:click="loginWithGoogle" --}}>
+        <flux:button class="w-full cursor-pointer"  wire:click="redirectToGoogle">
             <x-slot name="icon">
                 <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">

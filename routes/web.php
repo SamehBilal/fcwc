@@ -5,12 +5,13 @@ use Livewire\Volt\Volt;
 
 Route::redirect('/', '/login')->name('home');
 
-Route::view('standings', 'dashboard')
-    ->middleware(['auth'/* , 'verified' */])
-    ->name('dashboard');
+/* Route::view('standings', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard'); */
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
+    Volt::route('standings', 'games.standings')->name('dashboard');
     Volt::route('questions', 'games.questions')->name('games.questions');
 
     Volt::route('settings/profile', 'settings.profile')->name('settings.profile');

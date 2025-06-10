@@ -66,7 +66,7 @@ class GameUser extends Model
     // Relationship to User model (assuming you have a User model for players)
     public function player()
     {
-        return $this->belongsTo(User::class, 'player_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     // Relationship to Game model (if you have one)
@@ -78,7 +78,7 @@ class GameUser extends Model
     // Check if user has already played this game
     public static function hasUserPlayedGame($playerId, $gameId)
     {
-        return static::where('player_id', $playerId)
+        return static::where('user_id', $playerId)
                     ->where('game_id', $gameId)
                     ->exists();
     }
@@ -86,7 +86,7 @@ class GameUser extends Model
     // Get user's game result
     public static function getUserGameResult($playerId, $gameId)
     {
-        return static::where('player_id', $playerId)
+        return static::where('user_id', $playerId)
                     ->where('game_id', $gameId)
                     ->first();
     }
