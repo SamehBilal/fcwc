@@ -16,7 +16,11 @@
                     {{ __('Standings') }}
                 </flux:navbar.item>
                 <flux:navbar.item {{-- icon="folder-git-2" --}} :href="route('games.questions')" :current="request()->routeIs('games.questions')" wire:navigate>
-                    {{ __('Game 1') }}
+                    {{ __('Questions Game') }}
+                </flux:navbar.item>
+
+                <flux:navbar.item {{-- icon="folder-git-2" --}} :href="'https://fcwc.arabhardware.com'" wire:navigate>
+                    {{ __('Predections Game') }}
                 </flux:navbar.item>
             </flux:navbar>
 
@@ -106,7 +110,11 @@
                     </flux:navlist.item>
 
                     <flux:navbar.item {{-- icon="folder-git-2" --}} :href="route('games.questions')" :current="request()->routeIs('games.questions')" wire:navigate>
-                        {{ __('Game 1') }}
+                        {{ __('Questions Game') }}
+                    </flux:navbar.item>
+
+                    <flux:navbar.item {{-- icon="folder-git-2" --}} :href="'https://fcwc.arabhardware.com'" wire:navigate>
+                        {{ __('Predections Game') }}
                     </flux:navbar.item>
                 </flux:navlist.group>
             </flux:navlist>

@@ -22,233 +22,434 @@ new class extends Component {
     public $hasPlayedBefore = false;
     public $previousScore = null;
 
-    public function mount()
-    {
-        $this->checkIfUserHasPlayed();
+    // Updated mount method
+public function mount()
+{
+    $this->checkIfUserHasPlayed();
 
-        //dd(GameUser::all());
-
-        if (!$this->hasPlayedBefore) {
-            $this->initializeQuestions();
-            $this->startQuiz();
-        }
+    if (!$this->hasPlayedBefore) {
+        $this->initializeQuestions();
+        $this->startQuiz();
     }
+}
 
-    public function checkIfUserHasPlayed()
-    {
-        $existingRecord = GameUser::where('player_id', 1)->where('game_id', 1)->first();
+public function checkIfUserHasPlayed()
+{
+    $existingRecord = GameUser::where('player_id', 1)->where('game_id', 1)->first();
 
-        if ($existingRecord) {
-            $this->hasPlayedBefore = true;
-            $this->previousScore = $existingRecord->score;
-            $this->showScoreModal = true;
-        }
+    if ($existingRecord) {
+        $this->hasPlayedBefore = true;
+        $this->previousScore = $existingRecord->score;
+        $this->showScoreModal = true;
+        $this->gameEnded = true; // Add this line to prevent quiz UI from showing
     }
+}
 
     public function initializeQuestions()
     {
         $this->questions = [
-            [
-                'question' => 'How many days makes a week?',
-                'optionA' => '10 days',
-                'optionB' => '14 days',
-                'optionC' => '5 days',
-                'optionD' => '7 days',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'How many players are allowed on a soccer pitch?',
-                'optionA' => '10 players',
-                'optionB' => '11 players',
-                'optionC' => '9 players',
-                'optionD' => '12 players',
-                'correctOption' => 'optionB',
-            ],
-            [
-                'question' => 'Who was the first President of USA?',
-                'optionA' => 'Donald Trump',
-                'optionB' => 'Barack Obama',
-                'optionC' => 'Abraham Lincoln',
-                'optionD' => 'George Washington',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => '30 days has ______?',
-                'optionA' => 'January',
-                'optionB' => 'December',
-                'optionC' => 'June',
-                'optionD' => 'August',
-                'correctOption' => 'optionC',
-            ],
-            [
-                'question' => 'How many hours can be found in a day?',
-                'optionA' => '30 hours',
-                'optionB' => '38 hours',
-                'optionC' => '48 hours',
-                'optionD' => '24 hours',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'Which is the longest river in the world?',
-                'optionA' => 'River Nile',
-                'optionB' => 'Long River',
-                'optionC' => 'River Niger',
-                'optionD' => 'Lake Chad',
-                'correctOption' => 'optionA',
-            ],
-            [
-                'question' => '_____ is the hottest Continent on Earth?',
-                'optionA' => 'Oceania',
-                'optionB' => 'Antarctica',
-                'optionC' => 'Africa',
-                'optionD' => 'North America',
-                'correctOption' => 'optionC',
-            ],
-            [
-                'question' => 'Which country is the largest in the world?',
-                'optionA' => 'Russia',
-                'optionB' => 'Canada',
-                'optionC' => 'Africa',
-                'optionD' => 'Egypt',
-                'correctOption' => 'optionA',
-            ],
-            [
-                'question' => 'Which of these numbers is an odd number?',
-                'optionA' => 'Ten',
-                'optionB' => 'Twelve',
-                'optionC' => 'Eight',
-                'optionD' => 'Eleven',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => '"You Can\'t see me" is a popular saying by',
-                'optionA' => 'Eminem',
-                'optionB' => 'Bill Gates',
-                'optionC' => 'Chris Brown',
-                'optionD' => 'John Cena',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'Where is the world tallest building located?',
-                'optionA' => 'Africa',
-                'optionB' => 'California',
-                'optionC' => 'Dubai',
-                'optionD' => 'Italy',
-                'correctOption' => 'optionC',
-            ],
-            [
-                'question' => 'The longest river in the United Kingdom is?',
-                'optionA' => 'River Severn',
-                'optionB' => 'River Mersey',
-                'optionC' => 'River Trent',
-                'optionD' => 'River Tweed',
-                'correctOption' => 'optionA',
-            ],
-            [
-                'question' => 'How many permanent teeth does a dog have?',
-                'optionA' => '38',
-                'optionB' => '42',
-                'optionC' => '40',
-                'optionD' => '36',
-                'correctOption' => 'optionB',
-            ],
-            [
-                'question' => 'Which national team won the football World cup in 2018?',
-                'optionA' => 'England',
-                'optionB' => 'Brazil',
-                'optionC' => 'Germany',
-                'optionD' => 'France',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'Which US state was Donald Trump Born?',
-                'optionA' => 'New York',
-                'optionB' => 'California',
-                'optionC' => 'New Jersey',
-                'optionD' => 'Los Angeles',
-                'correctOption' => 'optionA',
-            ],
-            [
-                'question' => 'How many states does Nigeria have?',
-                'optionA' => '24',
-                'optionB' => '30',
-                'optionC' => '36',
-                'optionD' => '37',
-                'correctOption' => 'optionC',
-            ],
-            [
-                'question' => '____ is the capital of Nigeria?',
-                'optionA' => 'Abuja',
-                'optionB' => 'Lagos',
-                'optionC' => 'Calabar',
-                'optionD' => 'Kano',
-                'correctOption' => 'optionA',
-            ],
-            [
-                'question' => 'Los Angeles is also known as?',
-                'optionA' => 'Angels City',
-                'optionB' => 'Shining city',
-                'optionC' => 'City of Angels',
-                'optionD' => 'Lost Angels',
-                'correctOption' => 'optionC',
-            ],
-            [
-                'question' => 'What is the capital of Germany?',
-                'optionA' => 'Georgia',
-                'optionB' => 'Missouri',
-                'optionC' => 'Oklahoma',
-                'optionD' => 'Berlin',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'How many sides does a hexagon have?',
-                'optionA' => 'Six',
-                'optionB' => 'Seven',
-                'optionC' => 'Four',
-                'optionD' => 'Five',
-                'correctOption' => 'optionA',
-            ],
-            [
-                'question' => 'How many planets are currently in the solar system?',
-                'optionA' => 'Eleven',
-                'optionB' => 'Seven',
-                'optionC' => 'Nine',
-                'optionD' => 'Eight',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'Which Planet is the hottest?',
-                'optionA' => 'Jupiter',
-                'optionB' => 'Mercury',
-                'optionC' => 'Earth',
-                'optionD' => 'Venus',
-                'correctOption' => 'optionD',
-            ],
-            [
-                'question' => 'Where is the smallest bone in human body located?',
-                'optionA' => 'Toes',
-                'optionB' => 'Ears',
-                'optionC' => 'Fingers',
-                'optionD' => 'Nose',
-                'correctOption' => 'optionB',
-            ],
-            [
-                'question' => 'How many hearts does an Octopus have?',
-                'optionA' => 'One',
-                'optionB' => 'Two',
-                'optionC' => 'Three',
-                'optionD' => 'Four',
-                'correctOption' => 'optionC',
-            ],
-            [
-                'question' => 'How many teeth does an adult human have?',
-                'optionA' => '28',
-                'optionB' => '30',
-                'optionC' => '32',
-                'optionD' => '36',
-                'correctOption' => 'optionC',
-            ],
-        ];
+    [
+        'question' => 'ما هي الدولة المستضيفة لكأس العالم للأندية 2025؟',
+        'optionA' => 'قطر',
+        'optionB' => 'الولايات المتحدة',
+        'optionC' => 'إسبانيا',
+        'optionD' => 'السعودية',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'كم عدد الفرق المشاركة في كأس العالم للأندية 2025؟',
+        'optionA' => '24 فريقًا',
+        'optionB' => '16 فريقًا',
+        'optionC' => '32 فريقًا',
+        'optionD' => '12 فريقًا',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'ما هي الهيئة المنظمة لكأس العالم للأندية 2025؟',
+        'optionA' => 'الاتحاد الأوروبي (UEFA)',
+        'optionB' => 'كونمبول (CONMEBOL)',
+        'optionC' => 'الفيفا (FIFA)',
+        'optionD' => 'الكاف (CAF)',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي نادٍ فاز بدوري أبطال أوروبا 2023–24 وتأهل للمونديال 2025؟',
+        'optionA' => 'مانشستر سيتي',
+        'optionB' => 'ريال مدريد',
+        'optionC' => 'إنتر ميلان',
+        'optionD' => 'بايرن ميونخ',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أي نادٍ يمتلك أكبر عدد من ألقاب كأس العالم للأندية إلى حد 2025؟',
+        'optionA' => 'برشلونة',
+        'optionB' => 'ريال مدريد',
+        'optionC' => 'تشيلسي',
+        'optionD' => 'كورينثيانز',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أي مدينة أمريكية تحتضن إحدى مباريات كأس العالم للأندية 2025؟',
+        'optionA' => 'نيويورك',
+        'optionB' => 'لوس أنجلوس',
+        'optionC' => 'ميامي',
+        'optionD' => 'أتلانتا',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'أي قارة تمثل أكبر عدد من الفرق في مونديال الأندية 2025؟',
+        'optionA' => 'إفريقيا',
+        'optionB' => 'آسيا',
+        'optionC' => 'أوروبا',
+        'optionD' => 'أمريكا الجنوبية',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي فريق من دوري المحترفين الأمريكي (MLS) تأهل للمشاركة؟',
+        'optionA' => 'LA Galaxy',
+        'optionB' => 'إنتر ميامي',
+        'optionC' => 'Seattle Sounders',
+        'optionD' => 'Atlanta United',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'متى تُقام نهائيات كأس العالم للأندية 2025؟',
+        'optionA' => 'يونيو–يوليو 2025',
+        'optionB' => 'يناير 2025',
+        'optionC' => 'أغسطس–سبتمبر 2025',
+        'optionD' => 'ديسمبر 2025',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'كم عدد الفرق الإفريقية المؤهلة للمونديال 2025؟',
+        'optionA' => 'فريقٌ واحد',
+        'optionB' => 'فريقان',
+        'optionC' => 'ثلاثة فرق',
+        'optionD' => 'أربعة فرق',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'أي نادي برازيلي فاز بعدّة ألقاب للمونديال؟',
+        'optionA' => 'سانتوس',
+        'optionB' => 'فلامنجو',
+        'optionC' => 'كورينثيانز',
+        'optionD' => 'بالمييراس',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي ناد سعودي وصل نهائي مونديال الأندية 2022؟',
+        'optionA' => 'الهلال',
+        'optionB' => 'النصر',
+        'optionC' => 'الأهلي',
+        'optionD' => 'الاتحاد',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'ما هو الحد الأقصى لعدد اللاعبين في كل فريق؟',
+        'optionA' => '23 لاعبًا',
+        'optionB' => '25 لاعبًا',
+        'optionC' => '26 لاعبًا',
+        'optionD' => '30 لاعبًا',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'أي فريق إنجليزي فاز بكأس العالم للأندية عام 2021؟',
+        'optionA' => 'مانشستر سيتي',
+        'optionB' => 'ليفربول',
+        'optionC' => 'تشيلسي',
+        'optionD' => 'أرسنال',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'كل كم سنة يُقام مونديال الأندية بنظام 32 فريقًا؟',
+        'optionA' => 'كل سنة',
+        'optionB' => 'كل عامين',
+        'optionC' => 'كل ثلاث سنوات',
+        'optionD' => 'كل أربع سنوات',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'أي نادٍ آسيوي فاز بدوري أبطال آسيا 2022؟',
+        'optionA' => 'الهلال',
+        'optionB' => 'Urawa Red Diamonds',
+        'optionC' => 'النصر',
+        'optionD' => 'Kawasaki Frontale',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أي من الفرق التالية لم يُعلن تأهله بعد للمونديال 2025؟',
+        'optionA' => 'ريال مدريد',
+        'optionB' => 'تشيلسي',
+        'optionC' => 'فلامنجو',
+        'optionD' => 'الأهلي',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'أي بطولة تؤهل الأندية من أمريكا الجنوبية؟',
+        'optionA' => 'كوبا ليبرتادوريس',
+        'optionB' => 'كوبا أمريكا',
+        'optionC' => 'الدوري البرازيلي',
+        'optionD' => 'كأس الكونميبول',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'ما هو نظام البطولة للمونديال 2025؟',
+        'optionA' => 'إقصائي مباشر',
+        'optionB' => 'مجموعات ثم إقصائي',
+        'optionC' => 'مجموعات فقط',
+        'optionD' => 'دور واحد',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'في أي سنة أُقيم أول كأس عالم للأندية؟',
+        'optionA' => '1999',
+        'optionB' => '2005',
+        'optionC' => '2000',
+        'optionD' => '2010',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي نادٍ فاز بأول نسخة من بطولة كأس العالم للأندية؟',
+        'optionA' => 'كورينثيانز',
+        'optionB' => 'مانشستر يونايتد',
+        'optionC' => 'بوكا جونيورز',
+        'optionD' => 'ريال مدريد',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'أي بطولة أوروبية تُؤهل الفرق للأندية الأوروبية؟',
+        'optionA' => 'الدوري الأوروبي',
+        'optionB' => 'كأس السوبر',
+        'optionC' => 'دوري أبطال أوروبا',
+        'optionD' => 'دوري الأمم',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي اتحاد يضم أندية من المكسيك؟',
+        'optionA' => 'CAF',
+        'optionB' => 'CONCACAF',
+        'optionC' => 'UEFA',
+        'optionD' => 'AFC',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أي نادي يلعب له ليونيل ميسي عام 2025؟',
+        'optionA' => 'بي إس جي',
+        'optionB' => 'برشلونة',
+        'optionC' => 'إنتر ميامي',
+        'optionD' => 'الهلال',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'ما اسم الكأس الممنوح للفائز بالبطولة؟',
+        'optionA' => 'كأس الفيفا العالمي',
+        'optionB' => 'كأس الإنتركونتيننتال',
+        'optionC' => 'كأس كأس العالم للأندية',
+        'optionD' => 'كأس الاتحاد الدولي',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'كم مرة شارك النادي الأهلي المصري في كأس العالم للأندية قبل نسخة 2025؟',
+        'optionA' => '3 مرات',
+        'optionB' => '5 مرات',
+        'optionC' => '7 مرات',
+        'optionD' => '8 مرات',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'من هو النادي العربي الذي حصل على المركز الثاني في كأس العالم للأندية 2022؟',
+        'optionA' => 'الأهلي المصري',
+        'optionB' => 'الوداد المغربي',
+        'optionC' => 'الهلال السعودي',
+        'optionD' => 'الترجي التونسي',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي نادٍ عربي يُعد أكثر نادٍ أفريقي حصولاً على الميداليات في مونديال الأندية؟',
+        'optionA' => 'الوداد',
+        'optionB' => 'الأهلي',
+        'optionC' => 'الترجي',
+        'optionD' => 'العين',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'في أي عام وصل العين الإماراتي إلى نهائي كأس العالم للأندية؟',
+        'optionA' => '2017',
+        'optionB' => '2018',
+        'optionC' => '2019',
+        'optionD' => '2020',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'من هو مدرب نادي الهلال خلال مشاركته في كأس العالم للأندية 2022؟',
+        'optionA' => 'رامون دياز',
+        'optionB' => 'جيسوس',
+        'optionC' => 'رازفان لوشيسكو',
+        'optionD' => 'جارديم',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'ما هو إنجاز نادي الترجي التونسي في مونديال الأندية 2019؟',
+        'optionA' => 'خسر جميع مبارياته',
+        'optionB' => 'تأهل إلى نصف النهائي',
+        'optionC' => 'حقق المركز الخامس',
+        'optionD' => 'وصل النهائي',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي من هذه الأندية العربية تأهل إلى كأس العالم للأندية 2025 عبر دوري أبطال أفريقيا؟',
+        'optionA' => 'الوداد المغربي',
+        'optionB' => 'الأهلي المصري',
+        'optionC' => 'الرجاء المغربي',
+        'optionD' => 'شبيبة القبائل',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'من هو الهداف التاريخي للأهلي المصري في كأس العالم للأندية؟',
+        'optionA' => 'محمد أبو تريكة',
+        'optionB' => 'عماد متعب',
+        'optionC' => 'حسين الشحات',
+        'optionD' => 'عبدالله السعيد',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'أي فريق عربي خسر نهائي كأس العالم للأندية أمام ريال مدريد؟',
+        'optionA' => 'الترجي',
+        'optionB' => 'العين',
+        'optionC' => 'الهلال',
+        'optionD' => 'الوداد',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'ما هو لون قميص نادي الوداد الرياضي الأساسي؟',
+        'optionA' => 'أحمر',
+        'optionB' => 'أبيض',
+        'optionC' => 'أزرق',
+        'optionD' => 'أخضر',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'كم مرة شارك الترجي التونسي في كأس العالم للأندية؟',
+        'optionA' => 'مرة واحدة',
+        'optionB' => 'مرتين',
+        'optionC' => '3 مرات',
+        'optionD' => '4 مرات',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'من سجل هدف الهلال الوحيد في نهائي مونديال الأندية 2022؟',
+        'optionA' => 'سالم الدوسري',
+        'optionB' => 'موسى ماريغا',
+        'optionC' => 'كارييو',
+        'optionD' => 'فييتو',
+        'correctOption' => 'optionD',
+    ],
+    [
+        'question' => 'ما هي النتيجة التي انتهى بها نهائي كأس العالم للأندية بين الهلال وريال مدريد؟',
+        'optionA' => '2-0',
+        'optionB' => '5-3',
+        'optionC' => '3-1',
+        'optionD' => '4-2',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'من هو القائد الحالي لفريق الأهلي المصري؟',
+        'optionA' => 'عمرو السولية',
+        'optionB' => 'محمد الشناوي',
+        'optionC' => 'ياسر إبراهيم',
+        'optionD' => 'حسين الشحات',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أين تُوج الوداد المغربي بلقب دوري أبطال أفريقيا 2022؟',
+        'optionA' => 'القاهرة',
+        'optionB' => 'الدار البيضاء',
+        'optionC' => 'تونس',
+        'optionD' => 'الجزائر',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أي فريق عربي خسر من العين الإماراتي في مونديال الأندية 2018؟',
+        'optionA' => 'الترجي',
+        'optionB' => 'الوداد',
+        'optionC' => 'الأهلي',
+        'optionD' => 'الهلال',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'كم هدفًا سجل الأهلي في بطولة 2020 من كأس العالم للأندية؟',
+        'optionA' => 'هدف واحد',
+        'optionB' => 'هدفان',
+        'optionC' => '3 أهداف',
+        'optionD' => '4 أهداف',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أي مدرب قاد الوداد في كأس العالم للأندية 2022؟',
+        'optionA' => 'وليد الركراكي',
+        'optionB' => 'الحسين عموتة',
+        'optionC' => 'سفين فاندنبروك',
+        'optionD' => 'فوزي البنزرتي',
+        'correctOption' => 'optionB',
+    ],
+    [
+        'question' => 'أين أُقيمت بطولة كأس العالم للأندية التي شارك فيها الهلال عام 2022؟',
+        'optionA' => 'قطر',
+        'optionB' => 'الإمارات',
+        'optionC' => 'المغرب',
+        'optionD' => 'الولايات المتحدة',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'كم مرة حقق الأهلي المصري الميدالية البرونزية في مونديال الأندية؟',
+        'optionA' => 'مرة واحدة',
+        'optionB' => 'مرتين',
+        'optionC' => '3 مرات',
+        'optionD' => '4 مرات',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'من هو الفريق الذي أقصى الترجي من مونديال 2019؟',
+        'optionA' => 'الهلال',
+        'optionB' => 'فلامنغو',
+        'optionC' => 'العين',
+        'optionD' => 'مونتيري',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'ما هو اسم ملعب نادي العين الإماراتي؟',
+        'optionA' => 'ملعب محمد بن زايد',
+        'optionB' => 'ملعب آل نهيان',
+        'optionC' => 'استاد هزاع بن زايد',
+        'optionD' => 'استاد خليفة الدولي',
+        'correctOption' => 'optionC',
+    ],
+    [
+        'question' => 'من هو هداف نادي الهلال السعودي في مشاركاته بمونديال الأندية؟',
+        'optionA' => 'بافيتيمبي غوميز',
+        'optionB' => 'سالم الدوسري',
+        'optionC' => 'ماريغا',
+        'optionD' => 'كارييو',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'ما اسم المدافع المغربي البارز في صفوف الوداد عام 2022؟',
+        'optionA' => 'أشرف داري',
+        'optionB' => 'بدر بانون',
+        'optionC' => 'يحيى عطية الله',
+        'optionD' => 'نايف أكرد',
+        'correctOption' => 'optionA',
+    ],
+    [
+        'question' => 'من هو الفريق الذي سيُمثل تونس في مونديال 2025؟',
+        'optionA' => 'النجم الساحلي',
+        'optionB' => 'النادي الصفاقسي',
+        'optionC' => 'الترجي الرياضي',
+        'optionD' => 'البنزرتي',
+        'correctOption' => 'optionC',
+    ],
+];
+
     }
 
     public function startQuiz()
@@ -310,25 +511,36 @@ new class extends Component {
     }
 
     public function endGame()
-    {
-        $this->gameEnded = true;
-        $this->saveQuizResult();
-        $this->showScoreModal = true;
-    }
+{
+    $this->gameEnded = true;
+    $this->saveQuizResult();
+    $this->showScoreModal = true;
 
-    public function saveQuizResult()
-    {
-        try {
+    // Mark user as having played to prevent future attempts
+    $this->hasPlayedBefore = true;
+    $this->previousScore = $this->playerScore;
+}
+
+public function saveQuizResult()
+{
+    try {
+        // Check if record already exists to prevent duplicates
+        $existingRecord = GameUser::where('player_id', 1)->where('game_id', 1)->first();
+
+        if (!$existingRecord) {
             GameUser::create([
                 'player_id' => 1,
                 'game_id' => 1,
                 'score' => $this->playerScore,
+                'completed_at' => now(), // Add timestamp if you have this column
             ]);
-        } catch (\Exception $e) {
-            // Handle any database errors silently or log them
-            \Log::error('Failed to save quiz result: ' . $e->getMessage());
         }
+    } catch (\Exception $e) {
+        \Log::error('Failed to save quiz result: ' . $e->getMessage());
+        // You might want to show an error message to the user
+        session()->flash('error', 'Failed to save your score. Please try again.');
     }
+}
 
     public function getGradePercentage()
     {
@@ -350,106 +562,124 @@ new class extends Component {
     }
 
     public function resetQuiz()
-    {
-        // Prevent reset if user has already played
-        if ($this->hasPlayedBefore) {
-            return;
-        }
-
-        $this->questionNumber = 1;
-        $this->playerScore = 0;
-        $this->wrongAttempt = 0;
-        $this->indexNumber = 0;
-        $this->shuffledQuestions = [];
-        $this->currentQuestion = [];
-        $this->selectedAnswer = '';
-        $this->showScoreModal = false;
-        $this->gameEnded = false;
-        $this->answerSubmitted = false;
-        $this->correctOption = '';
-        $this->selectedOptionId = '';
-
-        $this->startQuiz();
+{
+    // Prevent reset if user has already played
+    if ($this->hasPlayedBefore) {
+        return;
     }
+
+    // Only allow reset if game hasn't been completed and saved
+    $existingRecord = GameUser::where('player_id', 1)->where('game_id', 1)->first();
+    if ($existingRecord) {
+        $this->hasPlayedBefore = true;
+        $this->previousScore = $existingRecord->score;
+        $this->showScoreModal = true;
+        return;
+    }
+
+    // Reset quiz state
+    $this->questionNumber = 1;
+    $this->playerScore = 0;
+    $this->wrongAttempt = 0;
+    $this->indexNumber = 0;
+    $this->shuffledQuestions = [];
+    $this->currentQuestion = [];
+    $this->selectedAnswer = '';
+    $this->showScoreModal = false;
+    $this->gameEnded = false;
+    $this->answerSubmitted = false;
+    $this->correctOption = '';
+    $this->selectedOptionId = '';
+
+    $this->startQuiz();
+}
 
     public function closeOptionModal()
     {
         $this->showOptionModal = false;
     }
+
+    public function hydrate()
+{
+    // This runs after every request, including page refreshes
+    $this->checkIfUserHasPlayed();
+}
 }; ?>
 
 <div class="">
-    @include('partials.settings-heading')
 
+    <h1 class="title">FIFA Club World Cup 2025 Questions</h1>
     <!-- Score Modal -->
-    @if ($showScoreModal)
-        <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div class="custom-bg border border-gray-700 rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-100">
-                <div class="text-center">
-                    <div class="mx-auto w-12 h-12 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
+@if ($showScoreModal)
+<div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
+    <div class="custom-bg border border-gray-700 rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-100">
+        <div class="text-center">
+            <div class="mx-auto w-12 h-12 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
 
-                    <h1 class="text-lg font-semibold text-white mb-6">
-                        @if ($hasPlayedBefore)
-                            Quiz Already Completed!
-                        @else
-                            Quiz Completed!
-                        @endif
-                    </h1>
+            <h1 class="text-lg font-semibold text-white mb-6">
+                @if ($hasPlayedBefore)
+                    Quiz Already Completed!
+                @else
+                    Quiz Completed!
+                @endif
+            </h1>
 
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <div class="bg-gray-700/50 border border-gray-600 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-white">{{ $totalQuestions }}</div>
-                            <div class="text-sm text-gray-400">Total Questions</div>
-                        </div>
-                        <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-green-400">
-                                {{ $hasPlayedBefore ? $previousScore : $playerScore }}</div>
-                            <div class="text-sm text-green-400/70">Correct</div>
-                        </div>
-                        <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-red-400">
-                                {{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
-                            <div class="text-sm text-red-400/70">Incorrect</div>
-                        </div>
-                        <div class="bg-white/10 border border-white/20 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-white">{{ $this->getGradePercentage() }}%</div>
-                            <div class="text-sm text-gray-300">Score</div>
-                        </div>
-                    </div>
-
-                    <div class="mb-6">
-                        <p class="text-sm font-medium text-gray-300 bg-gray-700/50 rounded-lg p-3 border border-gray-600">
-                            {{ $this->getRemark()['text'] }}
-                        </p>
-
-                        @if ($hasPlayedBefore)
-                            <p class="text-sm text-gray-400 mt-3">
-                                You have already completed this quiz. Each player can only take the quiz once.
-                            </p>
-                        @endif
-                    </div>
-
-                    @if (!$hasPlayedBefore)
-                        <button wire:click="resetQuiz"
-                            class="w-full bg-white hover:bg-gray-100 text-gray-900 px-4 py-2 rounded-lg font-medium transition-colors">
-                            Start New Quiz
-                        </button>
-                    @else
-                        <button onclick="window.history.back()"
-                            class="w-full bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-                            Go Back
-                        </button>
-                    @endif
+            <div class="grid grid-cols-2 gap-3 mb-6">
+                <div class="bg-gray-700/50 border border-gray-600 rounded-lg p-3">
+                    <div class="text-lg font-semibold text-white">{{ $totalQuestions }}</div>
+                    <div class="text-sm text-gray-400">Total Questions</div>
+                </div>
+                <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
+                    <div class="text-lg font-semibold text-green-400">
+                        {{ $hasPlayedBefore ? $previousScore : $playerScore }}</div>
+                    <div class="text-sm text-green-400/70">Correct</div>
+                </div>
+                <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
+                    <div class="text-lg font-semibold text-red-400">
+                        {{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
+                    <div class="text-sm text-red-400/70">Incorrect</div>
+                </div>
+                <div class="bg-white/10 border border-white/20 rounded-lg p-3">
+                    <div class="text-lg font-semibold text-white">{{ $this->getGradePercentage() }}%</div>
+                    <div class="text-sm text-gray-300">Score</div>
                 </div>
             </div>
-        </div>
-    @endif
 
+            <div class="mb-6">
+                <p class="text-sm font-medium text-gray-300 bg-gray-700/50 rounded-lg p-3 border border-gray-600">
+                    {{ $this->getRemark()['text'] }}
+                </p>
+
+                @if ($hasPlayedBefore)
+                    <p class="text-sm text-gray-400 mt-3">
+                        You have already completed this quiz. Each player can only take the quiz once.
+                    </p>
+                @endif
+            </div>
+
+            <!-- Updated button logic -->
+            <div class="flex gap-3">
+                @if (!$hasPlayedBefore && !$gameEnded)
+                    <button wire:click="resetQuiz"
+                        class="flex-1 bg-white cursor-pointer hover:bg-gray-100 text-gray-900 px-4 py-2 rounded-lg font-medium transition-colors">
+                        Retake Quiz
+                    </button>
+                @endif
+
+                <button onclick="window.location.reload()"
+                    class="flex-1 bg-gray-700 cursor-pointer hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                    {{ $hasPlayedBefore ? 'Close' : 'Exit' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
     <!-- Option Warning Modal -->
     @if ($showOptionModal)
         <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
@@ -470,7 +700,7 @@ new class extends Component {
                     <p class="text-gray-300 mb-4">You need to choose an option before proceeding.</p>
 
                     <button wire:click="closeOptionModal"
-                        class="w-full custom-bg hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                        class="w-full custom-bg hover:bg-gray-600 cursor-pointer text-white px-4 py-2 rounded-lg font-medium transition-colors">
                         Got it
                     </button>
                 </div>
@@ -479,8 +709,8 @@ new class extends Component {
     @endif
 
     <!-- Quiz Container -->
-    @if (!$hasPlayedBefore)
-        <div class="max-w-2xl mx-auto mt-10 p-10">
+    @if (!$hasPlayedBefore && !$gameEnded)
+            <div class="max-w-2xl mx-auto mt-10 p-10">
             <div class="custom-bg border border-gold-700 rounded-lg shadow-xl overflow-hidden">
                 <!-- Quiz Header -->
                 <div class="custom-bg border-b border-gray-700 p-4">
@@ -533,81 +763,78 @@ new class extends Component {
                                 </h2>
                             </div>
 
-                            <!-- Options - 2 per row -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                @foreach (['A', 'B', 'C', 'D'] as $option)
-                                    @php
-                                        $optionKey = 'option' . $option;
-                                        $isCorrect = $answerSubmitted && $correctOption === $optionKey;
-                                        $isSelected = $answerSubmitted && $selectedOptionId === $optionKey;
-                                        $isWrong =
-                                            $answerSubmitted &&
-                                            $selectedOptionId === $optionKey &&
-                                            $correctOption !== $optionKey;
-                                    @endphp
+                            <!-- Options - 2 per row with enhanced selection styling -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+    @foreach (['A', 'B', 'C', 'D'] as $option)
+        @php
+            $optionKey = 'option' . $option;
+            $isCorrect = $answerSubmitted && $correctOption === $optionKey;
+            $isSelected = $answerSubmitted && $selectedOptionId === $optionKey;
+            $isWrong = $answerSubmitted && $selectedOptionId === $optionKey && $correctOption !== $optionKey;
+            $isSelectedBeforeSubmit = !$answerSubmitted && $selectedAnswer === $optionKey;
+        @endphp
 
-                                    <label class="block cursor-pointer" for="option-{{ strtolower($option) }}">
-                                                                                    <div class="flex items-center p-3 rounded-lg border-2 transition-all duration-200
-                                            {{ $isCorrect ? 'border-green-500/50 bg-green-500/10' : '' }}
-                                            {{ $isWrong ? 'border-red-500/50 bg-red-500/10' : '' }}
-                                            {{ !$answerSubmitted && $selectedAnswer === $optionKey ? 'border-white/70 bg-white/10' : '' }}
-                                            {{ !$answerSubmitted && $selectedAnswer !== $optionKey ? 'border-gray-600 custom-bg hover:border-white/50 hover:bg-white/5' : '' }}">
+        <label class="block cursor-pointer transform transition-all duration-200 hover:scale-[1.02]" for="option-{{ strtolower($option) }}">
+            <div class="flex items-center p-3 rounded-lg border-2 transition-all duration-300 shadow-sm
+                @if($isCorrect) border-green-500 bg-green-500/20 shadow-green-500/20
+                @elseif($isWrong) border-red-500 bg-red-500/20 shadow-red-500/20
+                @elseif($isSelectedBeforeSubmit) border-blue-500 bg-blue-500/20 shadow-blue-500/30 shadow-lg transform scale-[1.02]
+                @else border-gray-600 custom-bg hover:border-gray-500 hover:bg-gray-700/30
+                @endif">
 
-                                            <div class="flex items-center flex-1">
-                                                <div class="flex items-center justify-center w-6 h-6 rounded-full mr-3 font-medium text-xs
-                                                    {{ $isCorrect ? 'bg-green-500 text-white' : '' }}
-                                                    {{ $isWrong ? 'bg-red-500 text-white' : '' }}
-                                                    {{ !$answerSubmitted && $selectedAnswer === $optionKey ? 'bg-white text-gray-900' : '' }}
-                                                    {{ !$answerSubmitted && $selectedAnswer !== $optionKey ? 'bg-gray-600 text-gray-300' : '' }}">
-                                                    {{ $option }}
-                                                </div>
+                <div class="flex items-center flex-1">
+                    <div class="flex items-center justify-center w-7 h-7 rounded-full mr-3 font-bold text-sm transition-all duration-300
+                        @if($isCorrect) bg-green-500 text-white shadow-md
+                        @elseif($isWrong) bg-red-500 text-white shadow-md
+                        @elseif($isSelectedBeforeSubmit) bg-blue-500 text-white shadow-md
+                        @else bg-gray-600 text-gray-300
+                        @endif">
+                        {{ $option }}
+                    </div>
 
-                                                <input type="radio" id="option-{{ strtolower($option) }}"
-                                                    wire:model="selectedAnswer" value="{{ $optionKey }}"
-                                                    class="sr-only" {{ $answerSubmitted ? 'disabled' : '' }}>
+                    <input type="radio" id="option-{{ strtolower($option) }}"
+                        wire:model.live="selectedAnswer" value="{{ $optionKey }}"
+                        class="sr-only" {{ $answerSubmitted ? 'disabled' : '' }}>
 
-                                                <span class="text-sm font-medium flex-1
-                                                    {{ $isCorrect ? 'text-green-400' : '' }}
-                                                    {{ $isWrong ? 'text-red-400' : '' }}
-                                                    {{ !$answerSubmitted && $selectedAnswer === $optionKey ? 'text-white' : '' }}
-                                                    {{ !$answerSubmitted && $selectedAnswer !== $optionKey ? 'text-gray-200' : '' }}">
-                                                    {{ $currentQuestion[$optionKey] }}
-                                                </span>
-                                            </div>
+                    <span class="text-sm font-medium flex-1 transition-all duration-300
+                        @if($isCorrect) text-green-300 font-semibold
+                        @elseif($isWrong) text-red-300 font-semibold
+                        @elseif($isSelectedBeforeSubmit) text-blue-200 font-semibold
+                        @else text-gray-200
+                        @endif">
+                        {{ $currentQuestion[$optionKey] }}
+                    </span>
+                </div>
 
-                                            <div class="ml-2">
-                                                @if ($isCorrect)
-                                                    <div class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                                                        <svg class="w-3 h-3 text-white" fill="none"
-                                                            stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                                        </svg>
-                                                    </div>
-                                                @elseif($isWrong)
-                                                    <div class="w-5 h-5 bg-red-500 rounded-full flex items-center justify-center">
-                                                        <svg class="w-3 h-3 text-white" fill="none"
-                                                            stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                                                        </svg>
-                                                    </div>
-                                                @elseif(!$answerSubmitted && $selectedAnswer === $optionKey)
-                                                    <div class="w-5 h-5 bg-white rounded-full flex items-center justify-center">
-                                                        <div class="w-2 h-2 bg-gray-900 rounded-full"></div>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </label>
-                                @endforeach
-                            </div>
+                <div class="ml-2">
+                    @if ($isCorrect)
+                        <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-md animate-pulse">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                    @elseif($isWrong)
+                        <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center shadow-md animate-pulse">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                    @elseif($isSelectedBeforeSubmit)
+                        <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center shadow-md border-2 border-blue-300">
+                            <div class="w-2.5 h-2.5 bg-white rounded-full animate-pulse"></div>
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </label>
+    @endforeach
+</div>
                         </div>
 
                         <!-- Next Button -->
                         <div class="text-center">
                             <button wire:click="nextQuestion"
-                                class="inline-flex items-center gap-2 bg-white hover:bg-gray-100 text-gray-900 px-5 py-2.5 rounded-lg font-medium transition-colors">
+                                class="inline-flex items-center gap-2 cursor-pointer bg-white hover:bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg">
                                 <span>{{ $answerSubmitted ? ($indexNumber + 1 >= $totalQuestions ? 'Finish Quiz' : 'Next Question') : 'Submit Answer' }}</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -619,5 +846,22 @@ new class extends Component {
                 </div>
             </div>
         </div>
+        @elseif($hasPlayedBefore)
+    <!-- Show message for users who have already completed -->
+    <div class="max-w-2xl mx-auto mt-10 p-10">
+        <div class="custom-bg border border-gray-700 rounded-lg shadow-xl p-8 text-center">
+            <div class="mx-auto w-16 h-16 bg-blue-500/10 border border-blue-500/20 rounded-full flex items-center justify-center mb-4">
+                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+            <h2 class="text-xl font-semibold text-white mb-2">Quiz Already Completed</h2>
+            <p class="text-gray-400 mb-4">You have already taken this quiz and scored {{ $previousScore }}/{{ $totalQuestions }}.</p>
+            <button onclick="window.history.back()"
+                class="bg-white hover:bg-gray-100 text-gray-900 px-6 py-2 rounded-lg font-medium transition-colors">
+                Go Back
+            </button>
+        </div>
+    </div>
     @endif
 </div>

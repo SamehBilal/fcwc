@@ -29,9 +29,9 @@ new class extends Component {}; ?>
                     <tr class="col">
                         <th>#</th>
                         <th>Player</th>
-                        <th>Game1</th>
-                        <th>Game2</th>
-                        <th>Game3</th>
+                        <th>Questions</th>
+                        <th>Groups</th>
+                        <th>Knockouts</th>
                         <th>Game4</th>
                         <th>Game5</th>
                         <th>PTS</th>

@@ -161,6 +161,16 @@ table .col{
 	color: #000000;
 }
 
+.title {
+    font-family: "Russo One", sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 3px #333;
+  }
+
 
 
 
