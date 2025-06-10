@@ -13,12 +13,21 @@ new class extends Component {
 
     public function loadTopPlayers()
     {
+        $dbDriver = DB::getDriverName();
+
+        $castExpression = match ($dbDriver) {
+            'pgsql' => 'score::integer',
+            'mysql' => 'CAST(score AS SIGNED)',
+            default => 'score',
+        };
+
         $this->topPlayers = GameUser::with('player')
         ->whereNotNull('user_id')
         ->where('score', '!=', '')
-        ->orderByRaw('CAST(score AS SIGNED) DESC')
+        ->orderByRaw("$castExpression DESC")
         ->limit(10)
-        ->get()->toArray();
+        ->get()
+        ->toArray();
     }
 }; ?>
 
@@ -36,19 +45,19 @@ new class extends Component {
                     <th>PTS</th>
                 </tr>
                 @forelse($topPlayers as $index => $gameUser)
-                        <tr class="{{ $index < 3 ? 'wpos' : 'pos' }}">
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $gameUser['player']['name'] ?? 'Unknown Player' }}</td>
-                            <td>{{ $gameUser['score'] }}</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>{{ $gameUser['score'] }}</td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="5" class="text-center py-4">No players found</td>
-                        </tr>
-                    @endforelse
+                    <tr class="{{ $index < 3 ? 'wpos' : 'pos' }}">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $gameUser['player']['name'] ?? 'Unknown Player' }}</td>
+                        <td>{{ $gameUser['score'] }}</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>{{ $gameUser['score'] }}</td>
+                    </tr>
+                @empty
+                    <tr>
+                        <td colspan="5" class="text-center py-4">No players found</td>
+                    </tr>
+                @endforelse
             </table>
         </div>
     </div>

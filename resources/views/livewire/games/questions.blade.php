@@ -15,7 +15,7 @@ new class extends Component {
     public $showScoreModal = false;
     public $showOptionModal = false;
     public $gameEnded = false;
-    public $totalQuestions = 2;
+    public $totalQuestions = 10;
     public $answerSubmitted = false;
     public $correctOption = '';
     public $selectedOptionId = '';
