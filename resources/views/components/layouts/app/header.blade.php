@@ -19,7 +19,7 @@
                     {{ __('Questions Game') }}
                 </flux:navbar.item>
 
-                <flux:navbar.item {{-- icon="folder-git-2" --}} :href="'https://worldcup-brown.vercel.app/?ui=1'.auth()->user()->id" wire:navigate>
+                <flux:navbar.item {{-- icon="folder-git-2" --}} :href="'https://worldcup-brown.vercel.app/?ui=1'.auth()->user()->id">
                     {{ __('Predections Game') }}
                 </flux:navbar.item>
             </flux:navbar>
@@ -113,7 +113,7 @@
                         {{ __('Questions Game') }}
                     </flux:navbar.item>
 
-                    <flux:navbar.item {{-- icon="folder-git-2" --}} :href="'https://worldcup-brown.vercel.app/?ui=1'.auth()->user()->id" wire:navigate>
+                    <flux:navbar.item {{-- icon="folder-git-2" --}} :href="'https://worldcup-brown.vercel.app/?ui=1'.auth()->user()->id">
                         {{ __('Predections Game') }}
                     </flux:navbar.item>
                 </flux:navlist.group>
