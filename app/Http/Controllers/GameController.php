@@ -17,6 +17,8 @@ class GameController extends Controller
             'knockouts'     => 'required',
         ]);
 
+        dd($request->all());
+
         Game::create([
             'game_id'       => 2,
             'user_id'       => $request->id,
