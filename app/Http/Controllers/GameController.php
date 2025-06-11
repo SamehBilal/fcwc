@@ -7,6 +7,28 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+    public function results(Request $request)
+    {
+        // Validate the request data
+        $validated = $request->validate([
+            'id'            => 'required|exists:users,id',
+            'champion'      => 'required',
+            'groups'        => 'required',
+            'knockouts'     => 'required',
+        ]);
+
+        Game::create([
+            'game_id'       => 2,
+            'user_id'       => $request->id,
+            'champion'      => $request->champion,
+            'groups'        => $request->groups,
+            'knockouts'     => $request->knockouts,
+        ]);
+
+        return response()->json([
+            'message' => 'Prediction received successfully.',
+        ]);
+    }
     /**
      * Display a listing of the resource.
      */
