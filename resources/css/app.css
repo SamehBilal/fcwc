@@ -106,7 +106,7 @@ select:focus[data-flux-control] {
 }
 
 th, td {
-    padding: 10px;
+    padding: 5px;
 }
 
 th{
