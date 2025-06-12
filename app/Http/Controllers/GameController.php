@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\GameResults;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -17,7 +18,7 @@ class GameController extends Controller
             'knockouts'     => 'required',
         ]);
 
-        Game::create([
+        GameResults::create([
             'game_id'       => 2,
             'user_id'       => $request->id,
             'champion'      => json_encode($request->champion),
