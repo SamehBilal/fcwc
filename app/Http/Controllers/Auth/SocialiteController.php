@@ -17,23 +17,27 @@ class SocialiteController extends Controller
 
     public function handleGoogleCallback()
     {
-        $gUser = Socialite::driver('google')->user();
+        try {
+            $gUser = Socialite::driver('google')->user();
 
-        $user = User::firstOrCreate(
-            ['email' => $gUser->getEmail()],
-            [
-                'name'      => $gUser->getName(),
-                'google_id' => $gUser->getId(),
-                'password'  => bcrypt(str()->random(16)),
-            ]
-        );
+            $user = User::firstOrCreate(
+                ['email' => $gUser->getEmail()],
+                [
+                    'name'      => $gUser->getName(),
+                    'google_id' => $gUser->getId(),
+                    'password'  => bcrypt(str()->random(16)),
+                ]
+            );
 
-        Auth::login($user);
+            Auth::login($user);
 
-        if (!$user->phone) {
-            return redirect()->route('complete.profile');
+            if (!$user->phone) {
+                return redirect()->route('complete.profile');
+            }
+
+            return redirect()->intended('/standings');
+        } catch (\Exception $e) {
+            return redirect()->route('login')->with('error', 'Google is currently unavailable. Please try again later.');
         }
-
-        return redirect()->intended('/standings');
     }
 }
