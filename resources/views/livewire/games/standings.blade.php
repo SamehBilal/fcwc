@@ -42,6 +42,7 @@ new class extends Component {
                     <th>Questions</th>
                     <th>Groups</th>
                     <th>Knockouts</th>
+                    <th>Champion</th>
                     <th>PTS</th>
                 </tr>
                 @forelse($topPlayers as $index => $gameUser)
@@ -49,6 +50,7 @@ new class extends Component {
                         <td>{{ $index + 1 }}</td>
                         <td>{{ $gameUser['player']['name'] ?? 'Unknown Player' }}</td>
                         <td>{{ $gameUser['score'] }}</td>
+                        <td>0</td>
                         <td>0</td>
                         <td>0</td>
                         <td>{{ $gameUser['score'] }}</td>
