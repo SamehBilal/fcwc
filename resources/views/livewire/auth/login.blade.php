@@ -115,6 +115,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
             </x-slot>
             Continue with Google
         </flux:button>
+        <flux:error name="google" class="text-red-600 mt-1 text-sm" />
     </div>
     <flux:separator text="or" />
 

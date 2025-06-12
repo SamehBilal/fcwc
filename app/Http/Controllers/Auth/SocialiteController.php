@@ -37,7 +37,9 @@ class SocialiteController extends Controller
 
             return redirect()->intended('/standings');
         } catch (\Exception $e) {
-            return redirect()->route('login')->with('error', 'Google is currently unavailable. Please try again later.');
+            return redirect()->route('login')->withErrors([
+                'google' => 'Google login failed. Please try again.',
+            ]);
         }
     }
 }
