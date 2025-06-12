@@ -17,14 +17,12 @@ class GameController extends Controller
             'knockouts'     => 'required',
         ]);
 
-        dd($request->all());
-
         Game::create([
             'game_id'       => 2,
             'user_id'       => $request->id,
-            'champion'      => $request->champion,
-            'groups'        => $request->groups,
-            'knockouts'     => $request->knockouts,
+            'champion'      => json_encode($request->champion),
+            'groups'        => json_encode($request->groups),
+            'knockouts'     => json_encode($request->knockouts),
         ]);
 
         return response()->json([
