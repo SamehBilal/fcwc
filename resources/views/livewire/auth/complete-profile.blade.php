@@ -29,6 +29,7 @@ new #[Layout('components.layouts.auth')] class extends Component {
     public function completeProfile(): void
     {
         $this->phone = $this->country_code . $this->phone_number;
+        $this->phone = $this->normalizeEgyptianPhone($this->phone);
 
         $validated = $this->validate([
             'phone' => ['required', 'max:255', 'unique:' . User::class],
@@ -39,8 +40,8 @@ new #[Layout('components.layouts.auth')] class extends Component {
             return;
         }
 
-        $user = Auth::user();
-        $user->phone = $this->normalizeEgyptianPhone($this->phone);
+        $user           = Auth::user();
+        $user->phone    = $this->phone;
         $user->save();
 
         $this->redirectIntended(route('dashboard', absolute: false), navigate: true);
