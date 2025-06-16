@@ -18,13 +18,13 @@
 <meta name="twitter:creator" content="عرب هاردوير" />
 <meta name="twitter:description" content="شارك في تحديات كأس العالم للأندية FIFA 2025 على منصة عرب هاردوير واربح جوائز قيّمة!" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://arabhardware.net/events/ahw.png" />
+<meta name="twitter:image" content="https://arabhardware.net/events/fifa_club_world_cup_2025.webp" />
 <meta name="theme-color" content="#6F5D25" />
 <meta property="og:url" content="https://gaming.arabhardware.net/" />
 <meta property="og:title" content="توقع نتائج كأس العالم للأندية 2025 واربح مع عرب هاردوير!" />
 <meta property="og:description" content="شارك في تحديات كأس العالم للأندية FIFA 2025 على منصة عرب هاردوير واربح جوائز قيّمة!" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://arabhardware.net/events/fifa2025-banner.png" />
+<meta property="og:image" content="https://arabhardware.net/events/fifa_club_world_cup_2025.webp" />
 
 
 
