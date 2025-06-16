@@ -53,6 +53,7 @@ class GameController extends Controller
     public function predictResults()
     {
         $predictions = GameResults::all();
+        dd($predictions);
 
         return response()->json($predictions);
     }
