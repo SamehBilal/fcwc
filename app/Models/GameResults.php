@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class GameResults extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
     protected $table    = 'game_results';
     protected $guarded  = [];
 }
