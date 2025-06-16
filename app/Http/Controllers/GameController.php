@@ -49,6 +49,14 @@ class GameController extends Controller
             'message' => 'Prediction received successfully.',
         ], 200);
     }
+
+    public function predictResults()
+    {
+        $predictions = GameResults::all();
+
+        return response()->json($predictions);
+    }
+
     /**
      * Display a listing of the resource.
      */

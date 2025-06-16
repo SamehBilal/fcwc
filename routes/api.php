@@ -10,4 +10,5 @@ Route::get('/user', function (Request $request) {
 
 Route::prefix('v1')->group(function () {
     Route::post('predict-result', [GameController::class, 'results'])->name('predict.result');
+    Route::get('predict-results', [GameController::class, 'predictResults'])->name('predict.results');
 });
