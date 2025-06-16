@@ -18,17 +18,36 @@ class GameController extends Controller
             'knockouts'     => 'required',
         ]);
 
-        GameResults::create([
-            'game_id'       => 2,
-            'user_id'       => $request->id,
-            'champion'      => json_encode($request->champion),
-            'groups'        => json_encode($request->groups),
-            'knockouts'     => json_encode($request->knockouts),
-        ]);
+        try {
+            // Check if the user has already submitted predictions
+            $existingPrediction = GameResults::where('user_id', $request->id)
+                ->where('game_id', 2)
+                ->first();
+
+            if ($existingPrediction) {
+                return response()->json([
+                    'message' => 'You have already submitted your predictions.',
+                ], 400);
+            }
+
+
+            GameResults::create([
+                'game_id'       => 2,
+                'user_id'       => $request->id,
+                'champion'      => json_encode($request->champion),
+                'groups'        => json_encode($request->groups),
+                'knockouts'     => json_encode($request->knockouts),
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => 'An error occurred while checking existing predictions.',
+                'error'   => $e->getMessage(),
+            ], 500);
+        }
 
         return response()->json([
             'message' => 'Prediction received successfully.',
-        ]);
+        ], 200);
     }
     /**
      * Display a listing of the resource.
