@@ -17,7 +17,7 @@
                 </span>
                 Arabhardware
             </a>
-            <div class="logo-wc absolute inset-0 bg-neutral-900 custom-bg">
+            <div class="logo-wc absolute inset-0 bg-neutral-900 custom-bg-1">
                 <div class="num num-two">
                     <span></span>
                     <span></span>
