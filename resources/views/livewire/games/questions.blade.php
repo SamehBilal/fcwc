@@ -35,7 +35,9 @@ new class extends Component {
 
     public function checkIfUserHasPlayed()
     {
-        $existingRecord = GameUser::where('user_id', auth()->user()->id)->where('game_id', 1)->first();
+        $existingRecord = GameUser::where('user_id', auth()->user()->id)
+            ->where('game_id', 1)
+            ->first();
 
         if ($existingRecord) {
             $this->hasPlayedBefore = true;
@@ -352,6 +354,86 @@ new class extends Component {
                 'optionD' => 'بوسطن',
                 'correctOption' => 'optionA',
             ],
+            [
+                'question' => 'ما هو المنتخب الأكثر تتويجًا بكأس العالم عبر التاريخ؟',
+                'optionA' => 'ألمانيا',
+                'optionB' => 'إيطاليا',
+                'optionC' => 'البرازيل',
+                'optionD' => 'الأرجنتين',
+                'correctOption' => 'optionC',
+            ],
+            [
+                'question' => 'من هو الهداف التاريخي لنهائيات كأس العالم؟',
+                'optionA' => 'ميروسلاف كلوزه',
+                'optionB' => 'رونالدو',
+                'optionC' => 'بيليه',
+                'optionD' => 'ليونيل ميسي',
+                'correctOption' => 'optionA',
+            ],
+            [
+                'question' => 'من سجّل أكبر عدد أهداف في نسخة واحدة من كأس العالم (13 هدفًا عام 1958)؟',
+                'optionA' => 'غيرد مولر',
+                'optionB' => 'جوست فونتين',
+                'optionC' => 'بيليه',
+                'optionD' => 'رونالدو',
+                'correctOption' => 'optionB',
+            ],
+            [
+                'question' => 'كم استغرق تسجيل أسرع هدف في تاريخ كأس العالم؟',
+                'optionA' => '11 ثانية',
+                'optionB' => '30 ثانية',
+                'optionC' => 'دقيقة كاملة',
+                'optionD' => '5 ثوانٍ',
+                'correctOption' => 'optionA',
+            ],
+            [
+                'question' => 'من هو اللاعب الوحيد الذي سجّل ثلاثية في مباراة نهائية لكأس العالم؟',
+                'optionA' => 'بيليه',
+                'optionB' => 'جيف هيرست',
+                'optionC' => 'زين الدين زيدان',
+                'optionD' => 'ماريو غوتزه',
+                'correctOption' => 'optionB',
+            ],
+            [
+                'question' => 'ما هو المنتخب الوحيد الذي شارك في جميع نسخ كأس العالم؟',
+                'optionA' => 'ألمانيا',
+                'optionB' => 'إيطاليا',
+                'optionC' => 'الأرجنتين',
+                'optionD' => 'البرازيل',
+                'correctOption' => 'optionD',
+            ],
+            [
+                'question' => 'من هو اللاعب صاحب أكبر عدد مباريات في تاريخ كأس العالم؟',
+                'optionA' => 'ليونيل ميسي',
+                'optionB' => 'لوثار ماتيوس',
+                'optionC' => 'باولو مالديني',
+                'optionD' => 'كريستيانو رونالدو',
+                'correctOption' => 'optionA',
+            ],
+            [
+                'question' => 'أي منتخب فاز بأول نسخة من كأس العالم عام 1930؟',
+                'optionA' => 'البرازيل',
+                'optionB' => 'الأوروغواي',
+                'optionC' => 'إيطاليا',
+                'optionD' => 'الأرجنتين',
+                'correctOption' => 'optionB',
+            ],
+            [
+                'question' => 'من هو أصغر لاعب سجّل هدفًا في تاريخ كأس العالم؟',
+                'optionA' => 'كيليان مبابي',
+                'optionB' => 'بيليه',
+                'optionC' => 'مايكل أوين',
+                'optionD' => 'ليونيل ميسي',
+                'correctOption' => 'optionB',
+            ],
+            [
+                'question' => 'من سجّل خمسة أهداف في مباراة واحدة بكأس العالم (رقم قياسي)؟',
+                'optionA' => 'أوليغ سالينكو',
+                'optionB' => 'غابرييل باتيستوتا',
+                'optionC' => 'رونالدو',
+                'optionD' => 'غاري لينيكر',
+                'correctOption' => 'optionA',
+            ],
         ];
     }
 
@@ -429,7 +511,9 @@ new class extends Component {
         /* dd($this->playerScore); */
         try {
             // Check if record already exists to prevent duplicates
-            $existingRecord = GameUser::where('user_id', auth()->user()->id)->where('game_id', 1)->first();
+            $existingRecord = GameUser::where('user_id', auth()->user()->id)
+                ->where('game_id', 1)
+                ->first();
 
             if (!$existingRecord) {
                 GameUser::create([
@@ -473,7 +557,9 @@ new class extends Component {
         }
 
         // Only allow reset if game hasn't been completed and saved
-        $existingRecord = GameUser::where('user_id', auth()->user()->id)->where('game_id', 1)->first();
+        $existingRecord = GameUser::where('user_id', auth()->user()->id)
+            ->where('game_id', 1)
+            ->first();
         if ($existingRecord) {
             $this->hasPlayedBefore = true;
             $this->previousScore = $existingRecord->score;
@@ -514,289 +600,182 @@ new class extends Component {
         return $this->redirect(route('dashboard'), navigate: true);
     }
 }; ?>
-
 <div dir="rtl">
 
-    <h1 class="title text-right">FIFA World Cup 2026 Questions</h1>
+    <h1 class="title">FIFA World Cup 2026 Questions</h1>
 
-    <!-- Score Modal -->
+    {{-- ===== Score Modal ===== --}}
     @if ($showScoreModal)
-        <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div
-                class="custom-bg border border-gray-700 rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-100">
-                <div class="text-center">
-                    <div
-                        class="mx-auto w-12 h-12 bg-green-500/10 border border-green-500/20 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+        <div class="qmodal-overlay">
+            <div class="qmodal">
+                <div class="qmodal__icon" style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3);">
+                    <svg class="w-6 h-6" style="color:#4ade80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+
+                <h1 class="qmodal__title">
+                    {{ $hasPlayedBefore ? 'تم إكمال الاختبار بالفعل!' : 'تم إكمال الاختبار!' }}
+                </h1>
+
+                <div class="qmodal__grid">
+                    <div class="qmodal__tile">
+                        <div class="qmodal__tile-num">{{ $totalQuestions }}</div>
+                        <div class="qmodal__tile-label">الأسئلة</div>
                     </div>
-
-                    <h1 class="text-lg font-semibold text-white mb-6">
-                        @if ($hasPlayedBefore)
-                            تم إكمال الاختبار بالفعل!
-                        @else
-                            تم إكمال الاختبار!
-                        @endif
-                    </h1>
-
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <div class="bg-gray-700/50 border border-gray-600 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-white">{{ $totalQuestions }}</div>
-                            <div class="text-sm text-gray-400">الأسئلة</div>
-                        </div>
-                        <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-green-400">
-                                {{ $hasPlayedBefore ? $previousScore : $playerScore }}</div>
-                            <div class="text-sm text-green-400/70">صحيح</div>
-                        </div>
-                        <div class="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-red-400">
-                                {{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
-                            <div class="text-sm text-red-400/70">خطأ</div>
-                        </div>
-                        <div class="bg-white/10 border border-white/20 rounded-lg p-3">
-                            <div class="text-lg font-semibold text-white">{{ $this->getGradePercentage() }}%</div>
-                            <div class="text-sm text-gray-300">النقاط</div>
-                        </div>
+                    <div class="qmodal__tile qmodal__tile--correct">
+                        <div class="qmodal__tile-num">{{ $hasPlayedBefore ? $previousScore : $playerScore }}</div>
+                        <div class="qmodal__tile-label">صحيح</div>
                     </div>
-
-                    <div class="mb-6">
-                        {{-- <p
-                            class="text-sm font-medium text-gray-300 bg-gray-700/50 rounded-lg p-3 border border-gray-600 text-right">
-                            {{ $this->getRemark()['text'] }}
-                        </p> --}}
-
-                        @if ($hasPlayedBefore)
-                            <p class="text-sm text-gray-400 mt-3 text-right">
-                                لقد أكملت هذا الاختبار بالفعل. يمكن لكل لاعب أن يأخذ الاختبار مرة واحدة فقط.
-                            </p>
-                        @endif
+                    <div class="qmodal__tile qmodal__tile--wrong">
+                        <div class="qmodal__tile-num">{{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
+                        <div class="qmodal__tile-label">خطأ</div>
                     </div>
-
-                    <!-- Updated button logic -->
-                    <div class="flex gap-3">
-                        @if (!$hasPlayedBefore && !$gameEnded)
-                            <button wire:click="resetQuiz"
-                                class="flex-1 bg-white cursor-pointer hover:bg-gray-100 text-gray-900 px-4 py-2 rounded-lg font-medium transition-colors">
-                                أعد المحاولة
-                            </button>
-                        @endif
-
-                        <button wire:click="redirectToStandings"
-                            class="flex-1 bg-gray-700 cursor-pointer hover:bg-gray-600 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-                            ترتيب اللاعبين
-                        </button>
+                    <div class="qmodal__tile qmodal__tile--gold">
+                        <div class="qmodal__tile-num">{{ $this->getGradePercentage() }}%</div>
+                        <div class="qmodal__tile-label">النقاط</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    @endif
-    <!-- Option Warning Modal -->
-    @if ($showOptionModal)
-        <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div
-                class="custom-bg border border-gray-700 rounded-xl shadow-2xl p-6 max-w-sm w-full mx-4 transform transition-all duration-300 scale-100">
-                <div class="text-center">
-                    <div
-                        class="mx-auto w-12 h-12 bg-amber-500/10 border border-amber-500/20 rounded-full flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z">
-                            </path>
-                        </svg>
-                    </div>
 
-                    <h1 class="text-lg font-semibold text-white mb-3 ">
-                        يرجى اختيار إجابة
-                    </h1>
+                @if ($hasPlayedBefore)
+                    <p class="text-sm text-gray-400 mb-4 text-center">
+                        لقد أكملت هذا الاختبار بالفعل. يمكن لكل لاعب أن يأخذ الاختبار مرة واحدة فقط.
+                    </p>
+                @endif
 
-                    <p class="text-gray-300 mb-4">تحتاج إلى اختيار خيار قبل المتابعة.</p>
-
-                    <button wire:click="closeOptionModal"
-                        class="w-full custom-bg hover:bg-gray-600 cursor-pointer text-white px-4 py-2 rounded-lg font-medium transition-colors">
-                        المتابعة
+                <div class="qmodal__actions">
+                    @if (!$hasPlayedBefore && !$gameEnded)
+                        <button wire:click="resetQuiz" class="q-btn" style="flex:1; background:var(--wc-tile);">
+                            أعد المحاولة
+                        </button>
+                    @endif
+                    <button wire:click="redirectToStandings" class="q-btn" style="flex:1;">
+                        ترتيب اللاعبين
                     </button>
                 </div>
             </div>
         </div>
     @endif
 
-    <!-- Quiz Container -->
+    {{-- ===== Option Warning Modal ===== --}}
+    @if ($showOptionModal)
+        <div class="qmodal-overlay">
+            <div class="qmodal">
+                <div class="qmodal__icon" style="background: rgba(252,175,64,0.12); border: 1px solid rgba(252,175,64,0.3);">
+                    <svg class="w-6 h-6" style="color:var(--wc-gold)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    </svg>
+                </div>
+                <h1 class="qmodal__title">يرجى اختيار إجابة</h1>
+                <p class="text-gray-300 mb-4 text-center">تحتاج إلى اختيار خيار قبل المتابعة.</p>
+                <button wire:click="closeOptionModal" class="q-btn" style="width:100%; background:var(--wc-tile);">
+                    المتابعة
+                </button>
+            </div>
+        </div>
+    @endif
+
+    {{-- ===== Quiz ===== --}}
     @if (!$hasPlayedBefore && !$gameEnded)
-        <div class="max-w-2xl mx-auto mt-10 p-10">
-            <div class="custom-bg border border-gold-700 rounded-lg shadow-xl overflow-hidden">
-                <!-- Quiz Header -->
-                <div class="custom-bg border-b border-gray-700 p-4">
-                    <div class="flex justify-between items-center gap-4 flex-row-reverse">
-                        <!-- Score section (now on the right) -->
-                        <div class="flex items-center gap-3 flex-row-reverse">
-                            <div>
-                                <div class="text-lg font-semibold text-white text-right">{{ $playerScore }}</div>
-                                <div class="text-xs text-gray-400 text-right">النقاط</div>
-                            </div>
-                            <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">
-                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                    </path>
+        <div class="q-wrap">
+            <div class="q-card wc-card">
+
+                {{-- Header --}}
+                <div class="q-head">
+                    <div class="q-head-row">
+                        {{-- Progress (right in RTL) --}}
+                        <div class="q-stat">
+                            <div class="q-stat__icon">
+                                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
+                            </div>
+                            <div>
+                                <div class="q-stat__num">{{ $questionNumber }} / {{ $totalQuestions }}</div>
+                                <div class="q-stat__label">التقدم</div>
                             </div>
                         </div>
 
-                        <!-- Progress section (now on the left) -->
-                        <div class="flex items-center gap-3 flex-row-reverse">
-                            <div>
-                                <div class="text-lg font-semibold text-white text-right">{{ $questionNumber }} /
-                                    {{ $totalQuestions }}</div>
-                                <div class="text-xs text-gray-400 text-right">التقدم</div>
-                            </div>
-                            <div class="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
-                                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
-                                    </path>
+                        {{-- Score (left in RTL) --}}
+                        <div class="q-stat">
+                            <div class="q-stat__icon">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
+                            </div>
+                            <div>
+                                <div class="q-stat__num">{{ $playerScore }}</div>
+                                <div class="q-stat__label">النقاط</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Progress Bar -->
-                    <div class="mt-3">
-                        <div class="w-full bg-gray-700 rounded-full h-1.5">
-                            <div class="bg-white h-1.5 rounded-full transition-all duration-300"
-                                style="width: {{ ($questionNumber / $totalQuestions) * 100 }}%; margin-right: auto; margin-left: 0;">
-                            </div>
-                        </div>
+                    <div class="q-progress">
+                        <div class="q-progress__bar" style="width: {{ ($questionNumber / $totalQuestions) * 100 }}%"></div>
                     </div>
                 </div>
 
-                <!-- Question Container -->
-                <div class="p-4 text-center">
-                    @if (!empty($currentQuestion))
-                        <div class="mb-6">
-                            <div class="custom-bg rounded-lg p-4 border border-gray-600 mb-4">
-                                <h2 class="text-base font-medium text-white leading-relaxed text-right">
-                                    {{ $currentQuestion['question'] }}
-                                </h2>
-                            </div>
+                {{-- Body --}}
+                @if (!empty($currentQuestion))
+                    <div class="q-body">
+                        <div class="q-question">{{ $currentQuestion['question'] }}</div>
 
-                            <!-- Options - 2 per row with enhanced selection styling -->
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                @foreach (['A', 'B', 'C', 'D'] as $option)
-                                    @php
-                                        $optionKey = 'option' . $option;
-                                        $isCorrect = $answerSubmitted && $correctOption === $optionKey;
-                                        $isSelected = $answerSubmitted && $selectedOptionId === $optionKey;
-                                        $isWrong =
-                                            $answerSubmitted &&
-                                            $selectedOptionId === $optionKey &&
-                                            $correctOption !== $optionKey;
-                                        $isSelectedBeforeSubmit = !$answerSubmitted && $selectedAnswer === $optionKey;
-                                    @endphp
+                        <div class="q-options">
+                            @foreach (['A', 'B', 'C', 'D'] as $option)
+                                @php
+                                    $optionKey = 'option' . $option;
+                                    $isCorrect = $answerSubmitted && $correctOption === $optionKey;
+                                    $isWrong = $answerSubmitted && $selectedOptionId === $optionKey && $correctOption !== $optionKey;
+                                    $isSelectedBeforeSubmit = !$answerSubmitted && $selectedAnswer === $optionKey;
+                                @endphp
 
-                                    <label
-                                        class="block cursor-pointer transform transition-all duration-200 hover:scale-[1.02]"
-                                        for="option-{{ strtolower($option) }}">
-                                        <div
-                                            class="flex items-center p-3 rounded-lg border-2 transition-all duration-300 shadow-sm flex-row-reverse
-    @if ($isCorrect) border-green-500 bg-green-500/20 shadow-green-500/20
-    @elseif($isWrong) border-red-500 bg-red-500/20 shadow-red-500/20
-    @elseif($isSelectedBeforeSubmit) border-blue-500 bg-blue-500/20 shadow-blue-500/30 shadow-lg transform scale-[1.02]
-    @else border-gray-600 custom-bg hover:border-gray-500 hover:bg-gray-700/30 @endif">
-
-                                            <!-- Move status icons to the left -->
-                                            <div class="mr-2 ml-0">
-                                                @if ($isCorrect)
-                                                    <div
-                                                        class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-md animate-pulse">
-                                                        <svg class="w-4 h-4 text-white" fill="none"
-                                                            stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="3" d="M5 13l4 4L19 7"></path>
-                                                        </svg>
-                                                    </div>
-                                                @elseif($isWrong)
-                                                    <div
-                                                        class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center shadow-md animate-pulse">
-                                                        <svg class="w-4 h-4 text-white" fill="none"
-                                                            stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                                stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
-                                                        </svg>
-                                                    </div>
-                                                @elseif($isSelectedBeforeSubmit)
-                                                    <div
-                                                        class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center shadow-md border-2 border-blue-300">
-                                                        <div class="w-2.5 h-2.5 bg-white rounded-full animate-pulse">
-                                                        </div>
-                                                    </div>
-                                                @endif
-                                            </div>
-
-                                            <div class="flex items-center flex-1 flex-row-reverse">
-                                                <span
-                                                    class="text-sm font-medium flex-1 transition-all duration-300 text-right mr-3 mr-0
-            @if ($isCorrect) text-green-300 font-semibold
-            @elseif($isWrong) text-red-300 font-semibold
-            @elseif($isSelectedBeforeSubmit) text-blue-200 font-semibold
-            @else text-gray-200 @endif">
-                                                    {{ $currentQuestion[$optionKey] }}
-                                                </span>
-
-                                                <div
-                                                    class="flex items-center justify-center w-7 h-7 rounded-full ml-0 mr-3 font-bold text-sm transition-all duration-300
-            @if ($isCorrect) bg-green-500 text-white shadow-md
-            @elseif($isWrong) bg-red-500 text-white shadow-md
-            @elseif($isSelectedBeforeSubmit) bg-blue-500 text-white shadow-md
-            @else bg-gray-600 text-gray-300 @endif">
-                                                    {{ $option }}
-                                                </div>
-
-                                                <input type="radio" id="option-{{ strtolower($option) }}"
-                                                    wire:model.live="selectedAnswer" value="{{ $optionKey }}"
-                                                    class="sr-only" {{ $answerSubmitted ? 'disabled' : '' }}>
-                                            </div>
-                                        </div>
-                                    </label>
-                                @endforeach
-                            </div>
+                                <button type="button"
+                                    wire:click="$set('selectedAnswer', '{{ $optionKey }}')"
+                                    @disabled($answerSubmitted)
+                                    class="q-option
+                                        @if ($isCorrect) q-option--correct
+                                        @elseif ($isWrong) q-option--wrong
+                                        @elseif ($isSelectedBeforeSubmit) q-option--selected @endif">
+                                    <span class="q-option__letter">{{ $option }}</span>
+                                    <span class="q-option__text">{{ $currentQuestion[$optionKey] }}</span>
+                                    <span class="q-option__mark">
+                                        @if ($isCorrect) ✓ @elseif ($isWrong) ✕ @endif
+                                    </span>
+                                </button>
+                            @endforeach
                         </div>
+                    </div>
 
-                        <!-- Next Button -->
-                        <button wire:click="nextQuestion"
-                            class="inline-flex items-center gap-2 cursor-pointer bg-white hover:bg-gray-100 text-gray-900 px-6 py-3 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 shadow-lg flex-row-reverse">
-                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
+                    <div class="q-foot">
+                        <button wire:click="nextQuestion" class="q-btn">
+                            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                             <span>{{ $answerSubmitted ? ($indexNumber + 1 >= $totalQuestions ? 'إنهاء الاختبار' : 'السؤال التالي') : 'إرسال الإجابة' }}</span>
                         </button>
-                    @endif
-                </div>
+                    </div>
+                @endif
+
             </div>
         </div>
-    @elseif($hasPlayedBefore)
-        <!-- Show message for users who have already completed -->
-        <div class="max-w-2xl mx-auto mt-10 p-10">
-            <div class="custom-bg border border-gray-700 rounded-lg shadow-xl p-8 text-center">
-                <div
-                    class="mx-auto w-16 h-16 bg-blue-500/10 border border-blue-500/20 rounded-full flex items-center justify-center mb-4">
-                    <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+    {{-- ===== Already played ===== --}}
+    @elseif ($hasPlayedBefore)
+        <div class="q-wrap">
+            <div class="q-card wc-card" style="padding: 32px; text-align: center;">
+                <div class="qmodal__icon" style="width:64px;height:64px;background:rgba(52,99,255,0.12);border:1px solid rgba(52,99,255,0.3);">
+                    <svg class="w-8 h-8" style="color:#7c93ff" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </div>
-                <h2 class="text-xl font-semibold text-white mb-2 text-right">تم إكمال الاختبار بالفعل</h2>
-                <p class="text-gray-400 mb-4 text-right">لقد أكملت هذا الاختبار بالفعل وحصلت على نقاط
-                    {{ $previousScore }}/{{ $totalQuestions }}.</p>
-                <button onclick="window.history.back()"
-                    class="bg-white hover:bg-gray-100 text-gray-900 px-6 py-2 rounded-lg font-medium transition-colors">
-                    العودة
-                </button>
+                <h2 class="qmodal__title">تم إكمال الاختبار بالفعل</h2>
+                <p class="text-gray-300 mb-5">لقد أكملت هذا الاختبار بالفعل وحصلت على {{ $previousScore }}/{{ $totalQuestions }}.</p>
+                <button wire:click="redirectToStandings" class="q-btn">ترتيب اللاعبين</button>
             </div>
         </div>
     @endif

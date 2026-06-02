@@ -30,11 +30,10 @@ new class extends Component {
         ->toArray();
     }
 }; ?>
-
-<div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
+<div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl p-4">
     <div class="relative h-full flex-1 overflow-hidden">
-        <div class="ptable">
-            <h1 class="headin text-lg font-bold">Standings</h1>
+        <div class="ptable wc-card">
+            <h1 class="headin">Standings</h1>
             <table>
                 <tr class="col">
                     <th>#</th>
@@ -47,7 +46,7 @@ new class extends Component {
                 </tr>
                 @forelse($topPlayers as $index => $gameUser)
                     <tr class="{{ $index < 3 ? 'wpos' : 'pos' }}">
-                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $index < 3 ? ['🥇', '🥈', '🥉'][$index] : $index + 1 }}</td>
                         <td>{{ $gameUser['player']['name'] ?? 'Unknown Player' }}</td>
                         <td>{{ $gameUser['score'] }}</td>
                         <td>0</td>
@@ -57,7 +56,7 @@ new class extends Component {
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="5" class="text-center py-4">No players found</td>
+                        <td colspan="7" class="text-center py-4">No players found</td>
                     </tr>
                 @endforelse
             </table>
