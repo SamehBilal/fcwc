@@ -11,20 +11,76 @@
         <div
             class="bg-muted relative hidden h-full flex-col p-10 text-white lg:flex dark:border-e dark:border-neutral-800">
             <div class="absolute inset-0 bg-neutral-900 custom-bg"></div>
-            <video autoplay muted loop playsinline class="bg-video">
-                <source src="{{ url('bg-video.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <a href="{{ route('home') }}" class="relative z-20 flex items-center gap-2 text-md font-medium"
-                wire:navigate>
+            <a href="{{ route('home') }}" class="relative z-20 flex items-center gap-2 text-md font-medium" wire:navigate>
                 <span class="flex h-8 w-8 items-center justify-center rounded-md">
                     <x-app-logo-icon class="me-2 h-7 fill-current text-white" />
                 </span>
                 Arabhardware
             </a>
+            <div class="logo-wc absolute inset-0 bg-neutral-900 custom-bg">
+                <div class="num num-two">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="num num-six">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <img src="https://www.donotfold.be/data/codepen/wk2026/fifa-world-cup-2026.png" alt="" />
+            </div>
+            {{-- <video autoplay muted loop playsinline class="bg-video">
+                <source src="{{ url('bg-video.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> --}}
 
-            @php
+
+
+
+
+            {{-- @php
                 [$message, $author] = str(Illuminate\Foundation\Inspiring::quotes()->random())->explode('-');
             @endphp
 
@@ -35,7 +91,7 @@
                         <flux:heading>{{ trim($author) }}</flux:heading>
                     </footer>
                 </blockquote>
-            </div>
+            </div> --}}
         </div>
         <div class="w-full lg:p-8">
             <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">

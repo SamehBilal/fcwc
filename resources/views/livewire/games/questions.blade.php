@@ -282,10 +282,10 @@ new class extends Component {
             ],
             [
                 'question' => 'كم عدد المنتخبات العربية المتأهلة لكأس العالم 2026؟',
-                'optionA' => '4 منتخبات',
-                'optionB' => '5 منتخبات',
-                'optionC' => '6 منتخبات',
-                'optionD' => '7 منتخبات',
+                'optionA' => '5 منتخبات',
+                'optionB' => '6 منتخبات',
+                'optionC' => '7 منتخبات',
+                'optionD' => '8 منتخبات',
                 'correctOption' => 'optionD',
             ],
             [
@@ -518,7 +518,7 @@ new class extends Component {
 <div dir="rtl">
 
     <h1 class="title text-right">FIFA World Cup 2026 Questions</h1>
-    
+
     <!-- Score Modal -->
     @if ($showScoreModal)
         <div class="fixed inset-0 custom-bg backdrop-blur-sm flex items-center justify-center z-50 p-4">
