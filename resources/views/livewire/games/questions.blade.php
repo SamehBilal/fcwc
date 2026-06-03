@@ -490,35 +490,38 @@ new class extends Component {
     public function endGame()
     {
         $this->gameEnded = true;
-        $this->saveQuizResult();
-        $this->showScoreModal = true;
 
-        // Mark user as having played to prevent future attempts
-        $this->hasPlayedBefore = true;
-        $this->previousScore = $this->playerScore;
+        // Only lock the player out if the score actually persisted.
+        if ($this->saveQuizResult()) {
+            $this->hasPlayedBefore = true;
+            $this->previousScore = $this->playerScore;
+        }
+
+        $this->showScoreModal = true;
     }
 
-    public function saveQuizResult()
+    public function saveQuizResult(): bool
     {
-        /* dd($this->playerScore); */
-        try {
-            // Check if record already exists to prevent duplicates
-            $existingRecord = GameUser::where('user_id', auth()->user()->id)
+        if (
+            GameUser::where('user_id', auth()->id())
                 ->where('game_id', 1)
-                ->first();
+                ->exists()
+        ) {
+            return true; // already saved
+        }
 
-            if (!$existingRecord) {
-                GameUser::create([
-                    'user_id' => auth()->user()->id,
-                    'game_id' => 1,
-                    'score' => $this->playerScore,
-                    'completed_at' => now(), // Add timestamp if you have this column
-                ]);
-            }
-        } catch (\Exception $e) {
-            \Log::error('Failed to save quiz result: ' . $e->getMessage());
-            // You might want to show an error message to the user
-            session()->flash('error', 'Failed to save your score. Please try again.');
+        try {
+            GameUser::create([
+                'user_id' => auth()->id(),
+                'game_id' => 1,
+                'score' => $this->playerScore,
+                'completed_at' => now(),
+            ]);
+            return true;
+        } catch (\Throwable $e) {
+            \Log::error('Failed to save quiz result', ['user_id' => auth()->id(), 'error' => $e->getMessage()]);
+            session()->flash('error', 'Failed to save your score.');
+            return false;
         }
     }
 
@@ -600,7 +603,8 @@ new class extends Component {
     @if ($showScoreModal)
         <div class="qmodal-overlay">
             <div class="qmodal">
-                <div class="qmodal__icon" style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3);">
+                <div class="qmodal__icon"
+                    style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3);">
                     <svg class="w-6 h-6" style="color:#4ade80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -621,7 +625,8 @@ new class extends Component {
                         <div class="qmodal__tile-label">صحيح</div>
                     </div>
                     <div class="qmodal__tile qmodal__tile--wrong">
-                        <div class="qmodal__tile-num">{{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
+                        <div class="qmodal__tile-num">
+                            {{ $hasPlayedBefore ? $totalQuestions - $previousScore : $wrongAttempt }}</div>
                         <div class="qmodal__tile-label">خطأ</div>
                     </div>
                     <div class="qmodal__tile qmodal__tile--gold">
@@ -654,8 +659,10 @@ new class extends Component {
     @if ($showOptionModal)
         <div class="qmodal-overlay">
             <div class="qmodal">
-                <div class="qmodal__icon" style="background: rgba(252,175,64,0.12); border: 1px solid rgba(252,175,64,0.3);">
-                    <svg class="w-6 h-6" style="color:var(--wc-gold)" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="qmodal__icon"
+                    style="background: rgba(252,175,64,0.12); border: 1px solid rgba(252,175,64,0.3);">
+                    <svg class="w-6 h-6" style="color:var(--wc-gold)" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z" />
                     </svg>
@@ -680,7 +687,8 @@ new class extends Component {
                         {{-- Progress (right in RTL) --}}
                         <div class="q-stat">
                             <div class="q-stat__icon">
-                                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-4 h-4 text-gray-300" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
@@ -695,7 +703,8 @@ new class extends Component {
                         <div class="q-stat">
                             <div class="q-stat__icon">
                                 <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
                             </div>
                             <div>
@@ -706,7 +715,8 @@ new class extends Component {
                     </div>
 
                     <div class="q-progress">
-                        <div class="q-progress__bar" style="width: {{ ($questionNumber / $totalQuestions) * 100 }}%"></div>
+                        <div class="q-progress__bar" style="width: {{ ($questionNumber / $totalQuestions) * 100 }}%">
+                        </div>
                     </div>
                 </div>
 
@@ -720,12 +730,14 @@ new class extends Component {
                                 @php
                                     $optionKey = 'option' . $option;
                                     $isCorrect = $answerSubmitted && $correctOption === $optionKey;
-                                    $isWrong = $answerSubmitted && $selectedOptionId === $optionKey && $correctOption !== $optionKey;
+                                    $isWrong =
+                                        $answerSubmitted &&
+                                        $selectedOptionId === $optionKey &&
+                                        $correctOption !== $optionKey;
                                     $isSelectedBeforeSubmit = !$answerSubmitted && $selectedAnswer === $optionKey;
                                 @endphp
 
-                                <button type="button"
-                                    wire:click="$set('selectedAnswer', '{{ $optionKey }}')"
+                                <button type="button" wire:click="$set('selectedAnswer', '{{ $optionKey }}')"
                                     @disabled($answerSubmitted)
                                     class="q-option
                                         @if ($isCorrect) q-option--correct
@@ -734,7 +746,11 @@ new class extends Component {
                                     <span class="q-option__letter">{{ $option }}</span>
                                     <span class="q-option__text">{{ $currentQuestion[$optionKey] }}</span>
                                     <span class="q-option__mark">
-                                        @if ($isCorrect) ✓ @elseif ($isWrong) ✕ @endif
+                                        @if ($isCorrect)
+                                            ✓
+                                        @elseif ($isWrong)
+                                            ✕
+                                        @endif
                                     </span>
                                 </button>
                             @endforeach
@@ -755,18 +771,21 @@ new class extends Component {
             </div>
         </div>
 
-    {{-- ===== Already played ===== --}}
+        {{-- ===== Already played ===== --}}
     @elseif ($hasPlayedBefore)
         <div class="q-wrap">
             <div class="q-card wc-card" style="padding: 32px; text-align: center;">
-                <div class="qmodal__icon" style="width:64px;height:64px;background:rgba(52,99,255,0.12);border:1px solid rgba(52,99,255,0.3);">
-                    <svg class="w-8 h-8" style="color:#7c93ff" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="qmodal__icon"
+                    style="width:64px;height:64px;background:rgba(52,99,255,0.12);border:1px solid rgba(52,99,255,0.3);">
+                    <svg class="w-8 h-8" style="color:#7c93ff" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </div>
                 <h2 class="qmodal__title">تم إكمال الاختبار بالفعل</h2>
-                <p class="text-gray-300 mb-5">لقد أكملت هذا الاختبار بالفعل وحصلت على {{ $previousScore }}/{{ $totalQuestions }}.</p>
+                <p class="text-gray-300 mb-5">لقد أكملت هذا الاختبار بالفعل وحصلت على
+                    {{ $previousScore }}/{{ $totalQuestions }}.</p>
                 <button wire:click="redirectToStandings" class="q-btn">ترتيب اللاعبين</button>
             </div>
         </div>
