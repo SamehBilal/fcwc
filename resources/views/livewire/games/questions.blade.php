@@ -387,14 +387,6 @@ new class extends Component {
                 'correctOption' => 'optionA',
             ],
             [
-                'question' => 'من هو اللاعب الوحيد الذي سجّل ثلاثية في مباراة نهائية لكأس العالم؟',
-                'optionA' => 'بيليه',
-                'optionB' => 'جيف هيرست',
-                'optionC' => 'زين الدين زيدان',
-                'optionD' => 'ماريو غوتزه',
-                'correctOption' => 'optionB',
-            ],
-            [
                 'question' => 'ما هو المنتخب الوحيد الذي شارك في جميع نسخ كأس العالم؟',
                 'optionA' => 'ألمانيا',
                 'optionB' => 'إيطاليا',
