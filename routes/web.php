@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
-Route::redirect('/', '/login')->name('home');
+//Route::redirect('/', '/login')->name('home');
+Route::any('/', fn() => abort(404))->name('home');
 
 /* Route::view('standings', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -19,4 +20,4 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-require __DIR__.'/auth.php';
+//require __DIR__.'/auth.php';
